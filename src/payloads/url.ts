@@ -71,12 +71,15 @@ export class UrlPayloadSerializer implements PayloadSerializer<
     if (!/^[a-zA-Z][a-zA-Z0-9+\-.]*:\/\//.test(candidate) && !/^[a-zA-Z]+:/.test(candidate)) {
       // Looks like it might be a bare domain (has a dot, no spaces before the first slash)
       const prePath = candidate.split('/')[0] ?? '';
-      
-      const isLocalhost = prePath.startsWith('localhost') || prePath.startsWith('127.0.0.1') || prePath.startsWith('[::1]');
+
+      const isLocalhost =
+        prePath.startsWith('localhost') ||
+        prePath.startsWith('127.0.0.1') ||
+        prePath.startsWith('[::1]');
       const isLocalIp = /^192\.168\.|^10\.|^172\.(1[6-9]|2[0-9]|3[0-1])\./.test(prePath);
 
       if ((prePath.includes('.') || isLocalhost) && !/\s/.test(prePath)) {
-        const scheme = (isLocalhost || isLocalIp) ? 'http' : 'https';
+        const scheme = isLocalhost || isLocalIp ? 'http' : 'https';
         candidate = `${scheme}://${candidate}`;
       }
     }

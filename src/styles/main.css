@@ -1468,6 +1468,12 @@ summary:focus-visible {
   }
 }
 
+@media (max-width: 480px) {
+  .preview-stage {
+    max-width: min(100%, 280px);
+  }
+}
+
 @media (max-width: 360px) {
   .site-container {
     padding-right: 12px;
