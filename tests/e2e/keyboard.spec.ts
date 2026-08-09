@@ -10,7 +10,7 @@ test.describe('Phase 8 — Keyboard Navigation & Accessibility E2E Suite', () =>
     page,
   }) => {
     // Verify main content heading is visible
-    await expect(page.getByRole('heading', { name: 'PureQR' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'QRVerity' })).toBeVisible();
 
     // Focus URL input directly via tab key or direct focus
     const urlInput = page.getByLabel('Website URL');

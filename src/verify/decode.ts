@@ -1,12 +1,12 @@
 /**
- * PureQR jsQR Decoder Wrapper
+ * QRVerity jsQR Decoder Wrapper
  *
- * Isolates jsQR behind a PureQR-owned interface.
+ * Isolates jsQR behind a QRVerity-owned interface.
  * No UI component or general application module should import jsQR directly.
  *
  * Configuration:
  * - inversionAttempts: 'dontInvert' (explicit, not relying on jsQR default).
- *   PureQR Phase 6 renders standard dark-on-light QR codes.
+ *   QRVerity Phase 6 renders standard dark-on-light QR codes.
  *   Future inverted-color support must revisit this setting deliberately.
  */
 
@@ -19,7 +19,7 @@ import { DecodeResult } from './types';
  * @param data - Uint8ClampedArray of RGBA pixel values
  * @param width - Pixel width of the raster
  * @param height - Pixel height of the raster
- * @returns PureQR-owned DecodeResult (never exposes jsQR-specific objects)
+ * @returns QRVerity-owned DecodeResult (never exposes jsQR-specific objects)
  */
 export function decodeQrFromPixels(
   data: Uint8ClampedArray,

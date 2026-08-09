@@ -1,6 +1,6 @@
 # 0004. QR Core Specification & Structural Protection Engine
 
-This document specifies PureQR's QR generation pipeline, Nayuki vendor isolation, matrix geometry model, and structural region protection engine.
+This document specifies QRVerity's QR generation pipeline, Nayuki vendor isolation, matrix geometry model, and structural region protection engine.
 
 ---
 
@@ -43,7 +43,7 @@ The vendored file `qrcodegen.ts` is **adapted but behavior-equivalent** to the p
 
 ## 3. Structural Region Map & Protection Invariants
 
-PureQR independently owns its structural region classification derived strictly from QR VERSION and geometry (ISO/IEC 18004 specification). Structural classification is independent of module dark/light state.
+QRVerity independently owns its structural region classification derived strictly from QR VERSION and geometry (ISO/IEC 18004 specification). Structural classification is independent of module dark/light state.
 
 ### Defined Structural Roles (`QrModuleRole`)
 

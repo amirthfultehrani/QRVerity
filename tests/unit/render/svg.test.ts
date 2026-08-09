@@ -6,7 +6,7 @@ import { renderQrSvg } from '../../../src/render/svg';
 
 describe('Canonical SVG Renderer', () => {
   it('renders a deterministic Version 1 QR SVG with quietZone=4', () => {
-    const { matrix } = encodeQr('PUREQR-TEST', {
+    const { matrix } = encodeQr('QRVERITY-TEST', {
       ecc: 'M',
       minVersion: 1,
       maxVersion: 1,

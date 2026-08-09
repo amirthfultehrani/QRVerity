@@ -6,10 +6,10 @@ import { PayloadType } from '../../../src/payloads/types';
 describe('Phase 3 Payload -> QR Encoder Integration Suite', () => {
   /* eslint-disable @typescript-eslint/no-explicit-any */
   const validInputs: Record<PayloadType, any> = {
-    url: { url: 'https://pureqr.org' },
-    text: { text: 'Hello PureQR Core!' },
+    url: { url: 'https://qrverity.org' },
+    text: { text: 'Hello QRVerity Core!' },
     wifi: { ssid: 'MyHomeWifi', security: 'WPA', password: 'secretpassword123' },
-    email: { to: 'user@example.com', subject: 'Inquiry', body: 'Hello PureQR' },
+    email: { to: 'user@example.com', subject: 'Inquiry', body: 'Hello QRVerity' },
     phone: { number: '+15550199' },
     sms: { number: '+15550199', message: 'Hello via SMS' },
     vcard: { firstName: 'Alice', lastName: 'Smith', email: 'alice@example.com' },
@@ -38,7 +38,7 @@ describe('Phase 3 Payload -> QR Encoder Integration Suite', () => {
       expect(typeof canonicalString).toBe('string');
       expect(canonicalString.length).toBeGreaterThan(0);
 
-      // 3. Pass canonical string directly into PureQR encodeQr()
+      // 3. Pass canonical string directly into QRVerity encodeQr()
       const { matrix, metadata } = encodeQr(canonicalString, { ecc: 'M' });
 
       expect(matrix).toBeDefined();

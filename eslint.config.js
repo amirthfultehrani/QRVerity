@@ -96,7 +96,7 @@ export default [
             {
               group: ['**/qr/vendor/**', '**/qr/vendor/*'],
               message:
-                'ARCHITECTURE VIOLATION: Nayuki vendored implementation must only be imported by the designated PureQR adapter inside src/qr/.',
+                'ARCHITECTURE VIOLATION: Nayuki vendored implementation must only be imported by the designated QRVerity adapter inside src/qr/.',
             },
             {
               group: ['**/workers/**', '**/workers/*'],

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { createStructureMap } from '../../../src/qr/structure';
 
-describe('PureQR Structural Region Map (Versions 1–40 Invariants)', () => {
+describe('QRVerity Structural Region Map (Versions 1–40 Invariants)', () => {
   it('validates structural invariant rules for every QR version 1 through 40', () => {
     for (let version = 1; version <= 40; version++) {
       const map = createStructureMap(version);

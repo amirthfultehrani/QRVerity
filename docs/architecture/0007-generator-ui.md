@@ -1,6 +1,6 @@
 # 0007. Generator UI Architecture & State Flow
 
-This document details the architecture of PureQR's generator interface, reactive state model, domain isolation, preview behavior, accessibility guarantees, and privacy invariants.
+This document details the architecture of QRVerity's generator interface, reactive state model, domain isolation, preview behavior, accessibility guarantees, and privacy invariants.
 
 ---
 

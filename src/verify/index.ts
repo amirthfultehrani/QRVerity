@@ -1,5 +1,5 @@
 /**
- * PureQR Verification Module Public API
+ * QRVerity Verification Module Public API
  */
 
 export { decodeQrFromPixels } from './decode';

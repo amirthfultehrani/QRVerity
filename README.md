@@ -1,32 +1,32 @@
-# PureQR
+# QRVerity
 
 > Privacy-first QR generator with rendered-output verification.
 
-PureQR is a static, client-side web application for generating customizable QR codes with pre-download raster verification.
+QRVerity is a static, client-side web application for generating customizable QR codes with pre-download raster verification.
 
 ---
 
-## What PureQR Does
+## What QRVerity Does
 
-PureQR creates custom QR codes directly inside your web browser. Before you download or copy an image, PureQR rasterizes the exact rendered SVG output and decodes it using an isolated optical decoder (`jsQR`) inside a Web Worker. This provides **Predicted Reliability** feedback so you can be confident your custom styling and logos remain readable.
+QRVerity creates custom QR codes directly inside your web browser. Before you download or copy an image, QRVerity rasterizes the exact rendered SVG output and decodes it using an isolated optical decoder (`jsQR`) inside a Web Worker. This provides **Predicted Reliability** feedback so you can be confident your custom styling and logos remain readable.
 
 ---
 
-## Why PureQR Exists
+## Why QRVerity Exists
 
 Many online QR generators send your sensitive data (Wi-Fi passwords, contact cards, personal URLs) to external servers, track user scans, or render custom QR codes that fail to scan when printed.
 
-PureQR was built to solve these problems:
+QRVerity was built to solve these problems:
 
-1. **100% Client-Side Privacy**: Payload and logo processing happen locally in the browser. PureQR has no application backend, database, tracking scripts, or analytics.
-2. **Pre-Download Verification**: PureQR verifies the rendered QR output in your browser using an independent decoder.
+1. **100% Client-Side Privacy**: Payload and logo processing happen locally in the browser. QRVerity has no application backend, database, tracking scripts, or analytics.
+2. **Pre-Download Verification**: QRVerity verifies the rendered QR output in your browser using an independent decoder.
 3. **Hard Structural Safety**: Geometric QR structural roles (finder patterns, timing lines, alignment patterns, format/version blocks) are protected by code invariants so logos and decorative styles never silently corrupt essential QR features.
 
 ---
 
 ## Supported QR Content Types
 
-PureQR supports nine structured payload formats:
+QRVerity supports nine structured payload formats:
 
 - **URL**: Web links (`http://` and `https://` only; dangerous schemes strictly rejected)
 - **Plain Text**: Arbitrary text payloads
@@ -55,7 +55,7 @@ Customize your QR code without sacrificing scannability:
 
 ## Predicted Reliability
 
-Predicted Reliability reports whether the rendered QR decoded successfully under PureQR's test conditions:
+Predicted Reliability reports whether the rendered QR decoded successfully under QRVerity's test conditions:
 
 - **GOOD**: Rendered QR decoded successfully and matched the encoded content.
 - **CAUTION**: Rendered QR decoded successfully, but a quality heuristic (such as moderately low contrast) warrants caution.
@@ -67,10 +67,10 @@ Predicted Reliability reports whether the rendered QR decoded successfully under
 
 ## Privacy
 
-PureQR is engineered for user privacy:
+QRVerity is engineered for user privacy:
 
 - **Local Browser Execution**: Payload and logo processing happen locally in the browser.
-- **No PureQR Backend**: PureQR operates without an application server, database, or API endpoint.
+- **No QRVerity Backend**: QRVerity operates without an application server, database, or API endpoint.
 - **Zero Telemetry / Analytics**: Contains no analytics scripts, tracking pixels, or third-party monitoring libraries.
 - **Static Hosting**: The static web host (such as GitHub Pages) serves application HTML/CSS/JS assets to your browser via standard HTTP web server requests. Once loaded, all QR generation and verification run client-side.
 
@@ -123,7 +123,7 @@ npm run check
 
 ## Testing
 
-PureQR maintains a comprehensive test suite across unit, integration, accessibility, and cross-browser E2E testing:
+QRVerity maintains a comprehensive test suite across unit, integration, accessibility, and cross-browser E2E testing:
 
 ```bash
 # Run ESLint check
@@ -146,7 +146,7 @@ npm run format:check
 
 ## Deployment
 
-PureQR builds into static HTML/CSS/JS distribution assets suitable for hosting on GitHub Pages or any static web server:
+QRVerity builds into static HTML/CSS/JS distribution assets suitable for hosting on GitHub Pages or any static web server:
 
 ```bash
 # Build production bundle
@@ -174,7 +174,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Third-Party Notices
 
-PureQR incorporates open-source software components under their respective licenses. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for complete attributions:
+QRVerity incorporates open-source software components under their respective licenses. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for complete attributions:
 
 - **Project Nayuki QR-Code-generator**: MIT License
 - **jsQR**: Apache License 2.0

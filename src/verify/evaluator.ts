@@ -2,7 +2,7 @@ import { calculateContrastRatio } from '../render/colors';
 import { ReliabilityIssue, ReliabilityResult, VerificationAttempt } from './types';
 
 /**
- * PureQR Deterministic Reliability Evaluator
+ * QRVerity Deterministic Reliability Evaluator
  *
  * Evaluates empirical decode facts and rule-based quality heuristics.
  *
@@ -32,7 +32,7 @@ export function evaluateReliability(
     issues.push({
       code: 'DECODE_FAILED',
       severity: 'risk',
-      message: `PureQR could not decode this rendered QR at the tested size (${attempt.actualSizePx} px).`,
+      message: `QRVerity could not decode this rendered QR at the tested size (${attempt.actualSizePx} px).`,
     });
 
     return {
@@ -66,7 +66,7 @@ export function evaluateReliability(
         issues.push({
           code: 'LOW_CONTRAST',
           severity: 'risk',
-          message: `Contrast is ${contrast.toFixed(1)}:1, below PureQR's conservative heuristic threshold.`,
+          message: `Contrast is ${contrast.toFixed(1)}:1, below QRVerity's conservative heuristic threshold.`,
         });
 
         return {
@@ -80,7 +80,7 @@ export function evaluateReliability(
         issues.push({
           code: 'MODERATE_CONTRAST',
           severity: 'caution',
-          message: `Contrast is ${contrast.toFixed(1)}:1, below PureQR's conservative strong-contrast heuristic.`,
+          message: `Contrast is ${contrast.toFixed(1)}:1, below QRVerity's conservative strong-contrast heuristic.`,
         });
 
         return {

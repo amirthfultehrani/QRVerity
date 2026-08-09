@@ -1,5 +1,5 @@
 /**
- * PureQR Core Types & Interfaces
+ * QRVerity Core Types & Interfaces
  *
  * Immutable domain models for QR matrix geometry, metadata, options,
  * and structural region classification.

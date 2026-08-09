@@ -1,5 +1,5 @@
 /**
- * PureQR Domain Error Hierarchy
+ * QRVerity Domain Error Hierarchy
  */
 
 export class QrError extends Error {

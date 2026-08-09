@@ -1,6 +1,6 @@
 # 0005. Canonical SVG Renderer & Pixel-Snapped Rasterization Pipeline
 
-This document specifies PureQR's visual representation engine, SVG security model, quiet zone rules, and pixel-snapped rasterization pipeline.
+This document specifies QRVerity's visual representation engine, SVG security model, quiet zone rules, and pixel-snapped rasterization pipeline.
 
 ---
 
@@ -43,7 +43,7 @@ renderQrSvg(
 
 ## 4. SVG Generation Strategy & Security Rules
 
-PureQR generates clean, ultra-compatible SVG using basic element primitives (`<svg>`, `<rect>`, `<g>`).
+QRVerity generates clean, ultra-compatible SVG using basic element primitives (`<svg>`, `<rect>`, `<g>`).
 
 ### Geometry Strategy
 
@@ -83,7 +83,7 @@ Colors MUST be validated by `normalizeHexColor` before rendering:
 
 ## 6. Integer Pixel-Per-Module Snapping Policy
 
-To eliminate sub-pixel anti-aliasing artifacts during rasterization, PureQR enforces integer module snapping via `planRasterSize`:
+To eliminate sub-pixel anti-aliasing artifacts during rasterization, QRVerity enforces integer module snapping via `planRasterSize`:
 
 $$\text{pixelsPerModule} = \max\left(1, \text{round}\left(\frac{\text{requestedSizePx}}{\text{totalModules}}\right)\right)$$
 

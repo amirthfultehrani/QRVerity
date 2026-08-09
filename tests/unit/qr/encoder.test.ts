@@ -3,9 +3,9 @@ import { encodeQr } from '../../../src/qr/encoder';
 import { QrEncodingError, QrInputError, QrVersionError } from '../../../src/qr/errors';
 import { EccLevel } from '../../../src/qr/types';
 
-describe('PureQR Encoder Adapter', () => {
+describe('QRVerity Encoder Adapter', () => {
   it('encodes simple text with automatic version and mask selection', () => {
-    const result = encodeQr('PureQR', { ecc: 'M' });
+    const result = encodeQr('QRVerity', { ecc: 'M' });
     expect(result.metadata.version).toBeGreaterThanOrEqual(1);
     expect(result.metadata.size).toBe(result.metadata.version * 4 + 17);
     expect(result.metadata.ecc).toBe('M');
@@ -19,7 +19,7 @@ describe('PureQR Encoder Adapter', () => {
   it('supports all ECC levels (L, M, Q, H)', () => {
     const eccLevels: EccLevel[] = ['L', 'M', 'Q', 'H'];
     for (const ecc of eccLevels) {
-      const result = encodeQr('https://pureqr.org', { ecc });
+      const result = encodeQr('https://qrverity.org', { ecc });
       expect(result.metadata.ecc).toBe(ecc);
     }
   });
@@ -47,10 +47,10 @@ describe('PureQR Encoder Adapter', () => {
   });
 
   it('encodes Unicode and Emoji payloads accurately', () => {
-    const japanese = encodeQr('こんにちはPureQR', { ecc: 'M' });
+    const japanese = encodeQr('こんにちはQRVerity', { ecc: 'M' });
     expect(japanese.metadata.version).toBeGreaterThanOrEqual(1);
 
-    const emoji = encodeQr('PureQR 🔒 Generation', { ecc: 'H' });
+    const emoji = encodeQr('QRVerity 🔒 Generation', { ecc: 'H' });
     expect(emoji.metadata.version).toBeGreaterThanOrEqual(1);
   });
 

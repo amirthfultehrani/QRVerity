@@ -1,6 +1,6 @@
 # 0002. Data Flow Pipeline
 
-This document details the data flow pipeline for PureQR generation, pre-download verification, and artifact export.
+This document details the data flow pipeline for QRVerity generation, pre-download verification, and artifact export.
 
 ---
 

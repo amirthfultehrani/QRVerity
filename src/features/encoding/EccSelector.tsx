@@ -74,7 +74,7 @@ export function EccSelector() {
         </p>
         <p>
           Higher error-correction levels add more redundancy, but can make the QR code larger or
-          denser. M is a good general-purpose default. PureQR automatically uses H when a logo is
+          denser. M is a good general-purpose default. QRVerity automatically uses H when a logo is
           added for additional resilience.
         </p>
       </details>

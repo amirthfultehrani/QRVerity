@@ -264,7 +264,8 @@ export function AppearancePanel() {
         <details class="appearance-info-disclosure">
           <summary>About module styles</summary>
           <p>
-            PureQR only applies these styles to data modules. Structural QR patterns stay protected.
+            QRVerity only applies these styles to data modules. Structural QR patterns stay
+            protected.
           </p>
           <ul class="appearance-option-notes">
             <li>

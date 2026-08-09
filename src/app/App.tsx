@@ -8,7 +8,7 @@ export function App() {
     <div class="site-container">
       <header class="site-header">
         <div class="header-brand">
-          <h1 class="site-title">PureQR</h1>
+          <h1 class="site-title">QRVerity</h1>
           <p class="site-tagline">Private. Reliable. Open Source.</p>
         </div>
         <div class="header-privacy-badge">
@@ -39,7 +39,7 @@ export function App() {
       </main>
 
       <footer class="site-footer">
-        <p>PureQR • Open source under the MIT License</p>
+        <p>QRVerity • Open source under the MIT License</p>
       </footer>
     </div>
   );

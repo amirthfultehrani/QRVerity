@@ -5,7 +5,7 @@ test.describe('Application Shell Smoke Test', () => {
     await page.goto('/');
 
     const title = page.locator('h1.site-title');
-    await expect(title).toHaveText('PureQR');
+    await expect(title).toHaveText('QRVerity');
 
     const tagline = page.locator('.site-tagline');
     await expect(tagline).toHaveText('Private. Reliable. Open Source.');

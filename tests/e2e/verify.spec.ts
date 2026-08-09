@@ -27,7 +27,7 @@ test.describe('Phase 6 — Rendered-Output Verification E2E Suite', () => {
   }) => {
     await page.getByLabel('QR type').selectOption('wifi');
 
-    await page.getByLabel('Network Name (SSID)').fill('PureQR-Secure-5G');
+    await page.getByLabel('Network Name (SSID)').fill('QRVerity-Secure-5G');
     await page.getByLabel('Password').fill('SuperSecretPass123!');
 
     const badge = page.locator('.reliability-badge');
@@ -54,7 +54,7 @@ test.describe('Phase 6 — Rendered-Output Verification E2E Suite', () => {
   }) => {
     await page.getByLabel('QR type').selectOption('calendar');
 
-    await page.getByLabel('Event Title').fill('PureQR Architecture Review');
+    await page.getByLabel('Event Title').fill('QRVerity Architecture Review');
     await page.getByLabel('Start Date & Time').fill('2026-09-01T10:00');
     await page.getByLabel('End Date & Time (Optional)').fill('2026-09-01T11:00');
 

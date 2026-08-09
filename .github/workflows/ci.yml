@@ -1,4 +1,4 @@
-name: PureQR CI
+name: QRVerity CI
 
 on:
   push:

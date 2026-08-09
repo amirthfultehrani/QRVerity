@@ -48,7 +48,7 @@ describe('vCard 3.0 Payload Serializer', () => {
   });
 
   it('serializes minimal vCard with organization only', () => {
-    const res = vCardSerializer.validate({ organization: 'PureQR Project' });
+    const res = vCardSerializer.validate({ organization: 'QRVerity Project' });
     expect(res.valid).toBe(true);
     const serialized = vCardSerializer.serialize(res.normalized!);
 
@@ -56,8 +56,8 @@ describe('vCard 3.0 Payload Serializer', () => {
       'BEGIN:VCARD',
       'VERSION:3.0',
       'N:;;;;',
-      'FN:PureQR Project',
-      'ORG:PureQR Project',
+      'FN:QRVerity Project',
+      'ORG:QRVerity Project',
       'END:VCARD',
     ].join('\r\n');
 

@@ -1,5 +1,5 @@
 /**
- * PureQR Export Module Public API
+ * QRVerity Export Module Public API
  */
 
 export * from './clipboard';

@@ -1,6 +1,6 @@
 # 0009. Rendered-Output Optical Verification Subsystem
 
-This document specifies PureQR's optical verification architecture, Web Worker execution pipeline, jsQR decoder integration, and Predicted Reliability evaluator.
+This document specifies QRVerity's optical verification architecture, Web Worker execution pipeline, jsQR decoder integration, and Predicted Reliability evaluator.
 
 ---
 
@@ -17,7 +17,7 @@ This document specifies PureQR's optical verification architecture, Web Worker e
 
 ## 2. Product Language & Non-Guarantee Policy
 
-PureQR NEVER guarantees physical camera scannability. The product explicitly avoids misleading claims such as "100% Verified", "Guaranteed Scannable", or "100% Reliable".
+QRVerity NEVER guarantees physical camera scannability. The product explicitly avoids misleading claims such as "100% Verified", "Guaranteed Scannable", or "100% Reliable".
 
 - **User-Facing Label**: `Predicted Reliability`
 - **Domain Statuses**: `GOOD`, `CAUTION`, `RISKY`
@@ -30,7 +30,7 @@ PureQR NEVER guarantees physical camera scannability. The product explicitly avo
 - **Library**: `jsqr` version `1.4.0` (Apache-2.0 License).
 - **Types**: Ships TypeScript declarations directly (`dist/index.d.ts`). No separate `@types/jsqr` package is installed.
 - **Isolation Wrapper**: [src/verify/decode.ts](file:///c:/Users/gamin/Downloads/QR%20Code%20Generating%20Project/src/verify/decode.ts) wraps `jsQR`. No UI component or domain module imports `jsQR` directly.
-- **Inversion Policy**: Calls `jsQR(data, width, height, { inversionAttempts: 'dontInvert' })`. PureQR renders standard dark modules on a light background. Setting `dontInvert` eliminates wasted CPU attempts and strictly validates standard optical polarity.
+- **Inversion Policy**: Calls `jsQR(data, width, height, { inversionAttempts: 'dontInvert' })`. QRVerity renders standard dark modules on a light background. Setting `dontInvert` eliminates wasted CPU attempts and strictly validates standard optical polarity.
 
 ---
 
@@ -83,7 +83,7 @@ export interface VerificationWorkerResponse {
 
 ## 7. Deterministic Reliability Rules
 
-PureQR rejects arbitrary 0–100 scores in favor of deterministic rule evaluation:
+QRVerity rejects arbitrary 0–100 scores in favor of deterministic rule evaluation:
 
 - **RISKY**:
   - `DECODE_FAILED`: `jsQR` completed normally but returned null (unable to decode raster).

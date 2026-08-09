@@ -1,5 +1,5 @@
 /**
- * PureQR Verification Domain Types
+ * QRVerity Verification Domain Types
  *
  * Defines the verification pipeline, reliability model, and worker protocol types.
  * Execution state (idle/pending/complete/error/unavailable) is kept strictly separate

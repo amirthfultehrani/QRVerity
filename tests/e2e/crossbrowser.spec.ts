@@ -10,7 +10,7 @@ test.describe('Phase 8 — Cross-Browser Smoke Suite', () => {
     page,
   }) => {
     // 1. Verify app title
-    await expect(page.getByRole('heading', { name: 'PureQR' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'QRVerity' })).toBeVisible();
 
     // 2. Edit payload
     const urlInput = page.getByLabel('Website URL');
@@ -47,7 +47,7 @@ test.describe('Phase 8 — Cross-Browser Smoke Suite', () => {
     page,
   }) => {
     await page.setViewportSize({ width: 320, height: 600 });
-    await expect(page.getByRole('heading', { name: 'PureQR' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'QRVerity' })).toBeVisible();
 
     const isScrollableX = await page.evaluate(() => {
       return document.documentElement.scrollWidth > document.documentElement.clientWidth;

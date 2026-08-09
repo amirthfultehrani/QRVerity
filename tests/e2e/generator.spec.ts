@@ -50,7 +50,7 @@ test.describe('Phase 4 — Generator UI E2E & Accessibility Suite', () => {
     // Switch to Wi-Fi payload type
     await page.getByLabel('QR type').selectOption('wifi');
 
-    await page.getByLabel('Network Name (SSID)').fill('PureQR Network');
+    await page.getByLabel('Network Name (SSID)').fill('QRVerity Network');
     await page.getByLabel('Security Type').selectOption('WPA');
     await page.getByLabel('Password').fill('correct horse battery staple');
 

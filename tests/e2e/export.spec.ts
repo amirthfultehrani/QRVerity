@@ -19,7 +19,7 @@ test.describe('Phase 5 — Export & Clipboard E2E Suite', () => {
     await page.getByRole('button', { name: 'Download SVG' }).click();
 
     const download = await downloadPromise;
-    expect(download.suggestedFilename()).toBe('pureqr-url.svg');
+    expect(download.suggestedFilename()).toBe('qrverity-url.svg');
 
     const stream = await download.createReadStream();
     const chunks: Buffer[] = [];
@@ -47,7 +47,7 @@ test.describe('Phase 5 — Export & Clipboard E2E Suite', () => {
     await page.getByRole('button', { name: 'Download PNG' }).click();
 
     const download = await downloadPromise;
-    expect(download.suggestedFilename()).toBe('pureqr-url.png');
+    expect(download.suggestedFilename()).toBe('qrverity-url.png');
 
     const path = await download.path();
     expect(path).not.toBeNull();

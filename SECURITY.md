@@ -2,7 +2,7 @@
 
 ## Security Model
 
-PureQR is engineered with client-side security and privacy as core priorities.
+QRVerity is engineered with client-side security and privacy as core priorities.
 
 - **Client-Side Execution**: All payload validation, QR matrix encoding, canonical SVG rendering, image sanitization, and optical worker verification (`jsQR`) occur entirely inside the user's web browser environment.
 - **Strict Content Security Policy**: A restrictive meta Content-Security-Policy header is configured in `index.html` preventing external script execution, arbitrary object loading, and remote style references (`default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; object-src 'none'; base-uri 'self'; form-action 'self';`).
@@ -12,4 +12,4 @@ PureQR is engineered with client-side security and privacy as core priorities.
 
 ## Reporting Vulnerabilities
 
-If you discover a security vulnerability or CSP concern in PureQR, please report it by opening a security issue on GitHub. Responsible disclosures will be investigated and addressed promptly.
+If you discover a security vulnerability or CSP concern in QRVerity, please report it by opening a security issue on GitHub. Responsible disclosures will be investigated and addressed promptly.

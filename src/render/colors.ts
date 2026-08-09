@@ -1,5 +1,5 @@
 /**
- * PureQR Color Validator & Contrast Calculator
+ * QRVerity Color Validator & Contrast Calculator
  *
  * Enforces strict CSS hex color validation to prevent CSS injection,
  * malicious URLs, external resource references, or invalid color expressions.

@@ -1,17 +1,17 @@
 {
-  "name": "pureqr",
+  "name": "qrverity",
   "private": true,
   "version": "1.0.0",
-  "description": "Privacy-first open-source static QR generator with rendered-output verification",
+  "description": "Private, client-side QR generation with rendered-output verification",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/amirthfultehrani/PureQR.git"
+    "url": "https://github.com/amirthfultehrani/QRVerity.git"
   },
   "bugs": {
-    "url": "https://github.com/amirthfultehrani/PureQR/issues"
+    "url": "https://github.com/amirthfultehrani/QRVerity/issues"
   },
-  "homepage": "https://github.com/amirthfultehrani/PureQR#readme",
+  "homepage": "https://amirthfultehrani.github.io/QRVerity/",
   "type": "module",
   "scripts": {
     "dev": "vite",

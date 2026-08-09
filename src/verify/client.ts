@@ -160,7 +160,7 @@ export class VerificationClient {
       this.updateState({
         executionState: 'error',
         reliability: null,
-        errorMessage: `PureQR couldn't prepare this QR for verification: ${message}`,
+        errorMessage: `QRVerity couldn't prepare this QR for verification: ${message}`,
       });
     }
   }

@@ -11,10 +11,10 @@
  * To update this vendored module from upstream:
  * 1. Copy the latest `qrcodegen.ts` from Project Nayuki's repository into this path.
  * 2. Update the recorded upstream commit hash in this header and in `docs/architecture/0004-qr-core.md`.
- * 3. Run the full verification suite (`npm run check`) to ensure no regressions in PureQR's encoder adapter.
+ * 3. Run the full verification suite (`npm run check`) to ensure no regressions in QRVerity's encoder adapter.
  *
  * ARCHITECTURE RESTRICTION:
- * This module is vendored for internal use by PureQR. Exactly ONE adapter module
+ * This module is vendored for internal use by QRVerity. Exactly ONE adapter module
  * (`src/qr/encoder.ts`) is permitted to import this file. No UI, renderer, payload,
  * or external module may import this file directly.
  */

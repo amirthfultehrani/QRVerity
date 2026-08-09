@@ -8,9 +8,9 @@ describe('URL Payload Serializer', () => {
     expect(res1.normalized?.url).toBe('https://example.com/path?foo=bar#hash');
     expect(urlSerializer.serialize(res1.normalized!)).toBe('https://example.com/path?foo=bar#hash');
 
-    const res2 = urlSerializer.validate({ url: 'http://pureqr.org' });
+    const res2 = urlSerializer.validate({ url: 'http://qrverity.org' });
     expect(res2.valid).toBe(true);
-    expect(urlSerializer.serialize(res2.normalized!)).toBe('http://pureqr.org/');
+    expect(urlSerializer.serialize(res2.normalized!)).toBe('http://qrverity.org/');
   });
 
   it('trims surrounding whitespace', () => {

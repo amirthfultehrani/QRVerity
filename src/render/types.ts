@@ -1,5 +1,5 @@
 /**
- * PureQR Render Domain Types & Interfaces
+ * QRVerity Render Domain Types & Interfaces
  *
  * Immutable types for SVG rendering options, logo assets, appearance choices,
  * rendering results, and rasterization options.

@@ -29,7 +29,7 @@ export function extractTotalModulesFromSvg(svg: string): number {
 /**
  * Browser SVG to ImageData Rasterizer
  *
- * Consumes canonical PureQR SVG string and draws it to an HTMLCanvasElement
+ * Consumes canonical QRVerity SVG string and draws it to an HTMLCanvasElement
  * using integer pixel-snapped dimensions before returning raw ImageData.
  *
  * Invariant:

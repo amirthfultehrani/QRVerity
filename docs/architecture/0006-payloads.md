@@ -1,6 +1,6 @@
 # 0006. V1 Payload Serialization & Validation Engine
 
-This document specifies PureQR's payload serialization layer, input validation contracts, escaping specifications, and domain isolation guardrails.
+This document specifies QRVerity's payload serialization layer, input validation contracts, escaping specifications, and domain isolation guardrails.
 
 ---
 
@@ -46,7 +46,7 @@ field.replace(/([\\;,:"])/g, '\\$1');
 
 ### SMS URI Format (RFC 5724)
 
-PureQR standardizes on the official IETF RFC 5724 SMS URI format `sms:<number>?body=<message>` (or `sms:<number>` when body is omitted). Message bodies are percent-encoded via `encodeURIComponent()`. This format provides maximum cross-platform compatibility across iOS Camera and Android native QR scanners.
+QRVerity standardizes on the official IETF RFC 5724 SMS URI format `sms:<number>?body=<message>` (or `sms:<number>` when body is omitted). Message bodies are percent-encoded via `encodeURIComponent()`. This format provides maximum cross-platform compatibility across iOS Camera and Android native QR scanners.
 
 ### vCard 3.0 Escaping & Line Endings
 

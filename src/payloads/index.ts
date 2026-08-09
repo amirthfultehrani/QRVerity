@@ -1,5 +1,5 @@
 /**
- * PureQR Payloads Module Public API
+ * QRVerity Payloads Module Public API
  */
 
 export * from './calendar';

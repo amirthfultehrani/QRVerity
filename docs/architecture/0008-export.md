@@ -1,6 +1,6 @@
 # 0008. Canonical Export Engine & Clipboard Subsystem
 
-This document specifies PureQR's export architecture, pixel-snapped PNG rasterization export, safe filename privacy rules, and clipboard feature detection.
+This document specifies QRVerity's export architecture, pixel-snapped PNG rasterization export, safe filename privacy rules, and clipboard feature detection.
 
 ---
 
@@ -21,11 +21,11 @@ This document specifies PureQR's export architecture, pixel-snapped PNG rasteriz
 To protect user privacy and prevent sensitive payload leaks (e.g. Wi-Fi passwords, email body content, contact notes):
 
 - **Zero Payload Contamination**: Filenames are constructed using ONLY the payload type identifier:
-  - `pureqr-url.svg` / `pureqr-url.png`
-  - `pureqr-text.svg` / `pureqr-text.png`
-  - `pureqr-wifi.svg` / `pureqr-wifi.png`
-  - `pureqr-vcard.svg` / `pureqr-vcard.png`
-  - `pureqr-calendar.svg` / `pureqr-calendar.png`
+  - `QRVerity-url.svg` / `QRVerity-url.png`
+  - `QRVerity-text.svg` / `QRVerity-text.png`
+  - `QRVerity-wifi.svg` / `QRVerity-wifi.png`
+  - `QRVerity-vcard.svg` / `QRVerity-vcard.png`
+  - `QRVerity-calendar.svg` / `QRVerity-calendar.png`
 - **Normalization**: Filenames are strictly lowercase, safe ASCII, with zero path separators (`/`, `\`) or control characters.
 
 ---

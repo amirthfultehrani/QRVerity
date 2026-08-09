@@ -48,7 +48,7 @@ export const ALIGNMENT_PATTERN_CENTERS: ReadonlyArray<ReadonlyArray<number>> = [
 ];
 
 /**
- * PureQR Structural Region Map Implementation.
+ * QRVerity Structural Region Map Implementation.
  * Derives geometric module roles independently from QR version specifications.
  */
 export class QrStructureMapImpl implements QrStructureMap {

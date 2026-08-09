@@ -10,7 +10,7 @@ import { vCardSerializer } from './vcard';
 import { wifiSerializer } from './wifi';
 
 /**
- * PureQR Payload Serializer Registry
+ * QRVerity Payload Serializer Registry
  */
 
 /* eslint-disable @typescript-eslint/no-explicit-any */

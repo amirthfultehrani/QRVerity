@@ -10,14 +10,14 @@ describe('Email Payload Serializer', () => {
 
   it('serializes mailto URI with subject and body correctly encoded', () => {
     const res = emailSerializer.validate({
-      to: 'support@pureqr.org',
+      to: 'support@qrverity.org',
       subject: 'Help & Feedback',
       body: 'Hello,\nNeed help with QR & scanning!',
     });
     expect(res.valid).toBe(true);
     const serialized = emailSerializer.serialize(res.normalized!);
     expect(serialized).toBe(
-      'mailto:support@pureqr.org?subject=Help%20%26%20Feedback&body=Hello%2C%0ANeed%20help%20with%20QR%20%26%20scanning!'
+      'mailto:support@qrverity.org?subject=Help%20%26%20Feedback&body=Hello%2C%0ANeed%20help%20with%20QR%20%26%20scanning!'
     );
   });
 

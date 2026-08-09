@@ -20,7 +20,7 @@ describe('Verification Client & Worker Protocol', () => {
     const mockErrorResponse: VerificationWorkerResponse = {
       id: asInternal(client).currentRequestId,
       kind: 'error',
-      error: "PureQR couldn't complete rendered-output verification.",
+      error: "QRVerity couldn't complete rendered-output verification.",
     };
 
     asInternal(client).handleWorkerResponse(mockErrorResponse);
@@ -28,7 +28,7 @@ describe('Verification Client & Worker Protocol', () => {
     const state = client.getState();
     expect(state.executionState).toBe('error');
     expect(state.reliability).toBeNull();
-    expect(state.errorMessage).toBe("PureQR couldn't complete rendered-output verification.");
+    expect(state.errorMessage).toBe("QRVerity couldn't complete rendered-output verification.");
 
     client.destroy();
   });

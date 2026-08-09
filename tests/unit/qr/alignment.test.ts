@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { ALIGNMENT_PATTERN_CENTERS, createStructureMap } from '../../../src/qr/structure';
 
-describe('PureQR Alignment Pattern Verification', () => {
+describe('QRVerity Alignment Pattern Verification', () => {
   it('verifies center coordinates for representative versions', () => {
     expect(ALIGNMENT_PATTERN_CENTERS[2]).toEqual([6, 18]);
     expect(ALIGNMENT_PATTERN_CENTERS[7]).toEqual([6, 22, 38]);

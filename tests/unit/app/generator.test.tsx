@@ -59,9 +59,9 @@ describe('Phase 4 — Generator State & UI Pipeline Integration', () => {
 
     // 2. Switch to Text
     setPayloadType('text');
-    updatePayloadInput('text', { text: 'Hello PureQR Text' });
+    updatePayloadInput('text', { text: 'Hello QRVerity Text' });
     res = generationResult.value;
-    expect(res.canonicalString).toBe('Hello PureQR Text');
+    expect(res.canonicalString).toBe('Hello QRVerity Text');
     expect(res.canonicalString).not.toContain('WIFI:');
 
     // 3. Switch to Geo (Location)
@@ -93,7 +93,7 @@ describe('Phase 4 — Generator State & UI Pipeline Integration', () => {
   it('renders complete App UI with title, forms, and preview container', () => {
     render(<App />);
 
-    expect(screen.getByRole('heading', { level: 1 }).textContent).toBe('PureQR');
+    expect(screen.getByRole('heading', { level: 1 }).textContent).toBe('QRVerity');
     expect(screen.getByText('Generated locally in your browser')).not.toBeNull();
     expect(screen.getByLabelText('Website URL')).not.toBeNull();
     expect(screen.getByLabelText('Generated QR Code Preview')).not.toBeNull();

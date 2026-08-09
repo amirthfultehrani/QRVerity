@@ -4,11 +4,11 @@ import { QrMatrixImpl } from './matrix';
 import { QrEncodingError, QrInputError, QrVersionError } from './errors';
 
 /**
- * PureQR Nayuki Adapter
+ * QRVerity Nayuki Adapter
  *
  * ARCHITECTURE BOUNDARY:
  * This module is the SOLE production module permitted to import Nayuki qrcodegen.
- * It encapsulates all vendor specifics and returns PureQR-owned QrMatrix and QrMetadata.
+ * It encapsulates all vendor specifics and returns QRVerity-owned QrMatrix and QrMetadata.
  */
 
 const ECC_MAP_TO_NAYUKI: Record<EccLevel, qrcodegen.QrCode.Ecc> = {

@@ -16,7 +16,7 @@ describe('Phase 7 — Appearance Controls & Structural Safety', () => {
   });
 
   it('renders DATA module shapes while keeping protected modules conservative', () => {
-    const { matrix } = encodeQr('https://pureqr.org/test-appearance', { ecc: 'M' });
+    const { matrix } = encodeQr('https://qrverity.org/test-appearance', { ecc: 'M' });
     const structureMap = createStructureMap(matrix.version);
 
     // 1. Square data style
@@ -51,7 +51,7 @@ describe('Phase 7 — Appearance Controls & Structural Safety', () => {
   });
 
   it('changes only the conservative outer finder corners for Rounded finder style', () => {
-    const { matrix } = encodeQr('https://pureqr.org/test-finder-style', { ecc: 'M' });
+    const { matrix } = encodeQr('https://qrverity.org/test-finder-style', { ecc: 'M' });
     const structureMap = createStructureMap(matrix.version);
     const baseOptions = {
       foreground: '#000000',

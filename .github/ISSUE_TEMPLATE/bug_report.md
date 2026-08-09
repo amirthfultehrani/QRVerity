@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Create a report to help us improve PureQR
+about: Create a report to help us improve QRVerity
 title: '[BUG] '
 labels: 'bug'
 assignees: ''

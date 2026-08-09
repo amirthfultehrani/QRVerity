@@ -1,5 +1,5 @@
 /**
- * PureQR Clipboard Helper Engine
+ * QRVerity Clipboard Helper Engine
  *
  * Provides feature detection and graceful clipboard copying for SVG source code and PNG images.
  */

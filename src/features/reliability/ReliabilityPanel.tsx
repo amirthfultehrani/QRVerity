@@ -149,7 +149,7 @@ function renderReliabilityExplanation(
   if (state.executionState !== 'complete' || !state.reliability || !renderResult || !attempt) {
     return (
       <p class="reliability-disclaimer">
-        PureQR tests the final rendered QR in your browser once a valid QR is available.
+        QRVerity tests the final rendered QR in your browser once a valid QR is available.
       </p>
     );
   }
@@ -161,7 +161,7 @@ function renderReliabilityExplanation(
       <p class="reliability-method">Based on rendered decode, content match, and visual checks.</p>
 
       <section class="reliability-explanation-section" aria-labelledby="reliability-checks-heading">
-        <h4 id="reliability-checks-heading">What PureQR checked</h4>
+        <h4 id="reliability-checks-heading">What QRVerity checked</h4>
         <ul class="reliability-fact-list">
           <li>
             <span class="reliability-fact-status">
@@ -225,7 +225,7 @@ function renderReliabilityExplanation(
       </section>
 
       <p class="reliability-explanation-copy">
-        PureQR tests the final rendered QR in your browser. Appearance choices such as colors,
+        QRVerity tests the final rendered QR in your browser. Appearance choices such as colors,
         module shapes, finder styling, logos, and QR density can affect whether the rendered code
         decodes successfully.
       </p>
@@ -234,7 +234,7 @@ function renderReliabilityExplanation(
         affect the image that jsQR tests; they are not presented as independent reliability scores.
       </p>
       <p class="reliability-context-note">
-        Contrast thresholds are conservative PureQR heuristics, not universal scanner guarantees.
+        Contrast thresholds are conservative QRVerity heuristics, not universal scanner guarantees.
       </p>
       <p class="reliability-disclaimer">
         Real cameras, screens, printers, lighting, distance, and scanning apps can behave

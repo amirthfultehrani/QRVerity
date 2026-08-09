@@ -1,4 +1,4 @@
-name: Deploy PureQR to GitHub Pages
+name: Deploy QRVerity to GitHub Pages
 
 on:
   push:

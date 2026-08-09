@@ -29,7 +29,7 @@ function fnv1aHash(str: string): string {
   return (hash >>> 0).toString(16).padStart(8, '0');
 }
 
-describe('PureQR Deterministic Golden Vectors', () => {
+describe('QRVerity Deterministic Golden Vectors', () => {
   interface GoldenTestCase {
     name: string;
     payload: string;

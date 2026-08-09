@@ -1,6 +1,6 @@
 # 0010. Structurally Safe Appearance Controls & Logo Subsystem
 
-This document specifies PureQR's Phase 7 appearance customization controls, data-only module styling, finder safety boundaries, local raster logo sanitization, and safe logo geometry clamping.
+This document specifies QRVerity's Phase 7 appearance customization controls, data-only module styling, finder safety boundaries, local raster logo sanitization, and safe logo geometry clamping.
 
 ---
 

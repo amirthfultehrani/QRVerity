@@ -1,6 +1,6 @@
 # 0003. Module Boundaries & Import Rules
 
-To ensure long-term maintainability, correctness, and security, PureQR enforces strict architectural boundaries across directories.
+To ensure long-term maintainability, correctness, and security, QRVerity enforces strict architectural boundaries across directories.
 
 ---
 

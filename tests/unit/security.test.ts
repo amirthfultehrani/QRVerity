@@ -10,7 +10,7 @@ import { renderQrSvg } from '../../src/render/svg';
 describe('Phase 8 — Security & Input Hardening Suite', () => {
   describe('URL Scheme Security', () => {
     it('strictly permits only http: and https: protocols', () => {
-      expect(urlSerializer.validate({ url: 'https://pureqr.org' }).valid).toBe(true);
+      expect(urlSerializer.validate({ url: 'https://qrverity.org' }).valid).toBe(true);
       expect(urlSerializer.validate({ url: 'http://example.com/path?a=1' }).valid).toBe(true);
     });
 

@@ -1,5 +1,5 @@
 /**
- * PureQR Logo Subsystem Domain Types
+ * QRVerity Logo Subsystem Domain Types
  */
 
 export interface LogoValidationLimits {

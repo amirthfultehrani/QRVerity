@@ -13,7 +13,7 @@ self.onmessage = (event: MessageEvent<VerificationWorkerRequest>) => {
     // Reconstruct pixel data from transferred ArrayBuffer
     const pixelData = new Uint8ClampedArray(request.rgbaBuffer);
 
-    // Decode using PureQR's jsQR wrapper (inversionAttempts: 'dontInvert')
+    // Decode using QRVerity's jsQR wrapper (inversionAttempts: 'dontInvert')
     const decodeResult = decodeQrFromPixels(pixelData, request.width, request.height);
 
     // Strict payload comparison (no normalization, no trimming)
@@ -44,7 +44,7 @@ self.onmessage = (event: MessageEvent<VerificationWorkerRequest>) => {
     const response: VerificationWorkerResponse = {
       id: request.id,
       kind: 'error',
-      error: "PureQR couldn't complete rendered-output verification.",
+      error: "QRVerity couldn't complete rendered-output verification.",
     };
 
     self.postMessage(response);

@@ -7,7 +7,7 @@ import { renderQrSvg } from '../../../src/render/svg';
 
 describe('Export Module Unit Tests', () => {
   it('creates valid SVG export result using canonical SVG string', () => {
-    const { matrix } = encodeQr('https://pureqr.org', { ecc: 'M' });
+    const { matrix } = encodeQr('https://qrverity.org', { ecc: 'M' });
     const structure = createStructureMap(matrix.version);
     const renderResult = renderQrSvg(matrix, structure, {
       foreground: '#000000',
@@ -17,7 +17,7 @@ describe('Export Module Unit Tests', () => {
 
     const exportResult = exportQrSvg(renderResult.svg, 'url');
 
-    expect(exportResult.filename).toBe('pureqr-url.svg');
+    expect(exportResult.filename).toBe('qrverity-url.svg');
     expect(exportResult.blob).toBeInstanceOf(Blob);
     expect(exportResult.blob.type).toBe('image/svg+xml;charset=utf-8');
   });

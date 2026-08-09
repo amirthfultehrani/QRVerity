@@ -1,6 +1,6 @@
-# PureQR v1.0.0 Release Candidate Checklist
+# QRVerity v1.0.0 Release Candidate Checklist
 
-This checklist tracks the release criteria required before tagging and publishing a PureQR release candidate.
+This checklist tracks the release criteria required before tagging and publishing a QRVerity release candidate.
 
 ---
 
@@ -28,7 +28,7 @@ This checklist tracks the release criteria required before tagging and publishin
 
 - [x] `npm run build` generates static assets in `dist/` without errors.
 - [x] Web Worker asset (`dist/assets/verify.worker-*.js`) bundled and loadable via same-origin URL.
-- [x] Subpath deployment build (`VITE_BASE_PATH=/pureqr/`) verified.
+- [x] Subpath deployment build (`VITE_BASE_PATH=/QRVerity/`) verified.
 - [x] Zero source maps or debug artifacts in production bundle.
 
 ---

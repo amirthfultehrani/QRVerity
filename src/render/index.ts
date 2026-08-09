@@ -1,5 +1,5 @@
 /**
- * PureQR Render Module API Surface
+ * QRVerity Render Module API Surface
  */
 
 export * from './types';

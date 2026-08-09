@@ -19,7 +19,7 @@ describe('Safe Filename Generator', () => {
     for (const type of payloadTypes) {
       const filename = generateExportFilename(type, 'svg');
 
-      expect(filename).toBe(`pureqr-${type}.svg`);
+      expect(filename).toBe(`qrverity-${type}.svg`);
       expect(filename).not.toContain('http');
       expect(filename).not.toContain('password');
       expect(filename).not.toContain('/');
@@ -32,7 +32,7 @@ describe('Safe Filename Generator', () => {
     for (const type of payloadTypes) {
       const filename = generateExportFilename(type, 'png');
 
-      expect(filename).toBe(`pureqr-${type}.png`);
+      expect(filename).toBe(`qrverity-${type}.png`);
       expect(filename).not.toContain('/');
       expect(filename).not.toContain('\\');
       expect(filename).toBe(filename.toLowerCase());

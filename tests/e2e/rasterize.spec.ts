@@ -9,7 +9,7 @@ test.describe('Phase 2 — Browser SVG Rasterization', () => {
     page,
   }) => {
     // 1. Generate canonical SVG in test context
-    const { matrix } = encodeQr('PUREQR', {
+    const { matrix } = encodeQr('QRVERITY', {
       ecc: 'M',
       minVersion: 1,
       maxVersion: 1,

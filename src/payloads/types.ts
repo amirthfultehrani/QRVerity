@@ -1,5 +1,5 @@
 /**
- * PureQR Payload Domain Types & Common Serializer Contracts
+ * QRVerity Payload Domain Types & Common Serializer Contracts
  *
  * Provides strongly typed contracts for payload validation, issue reporting,
  * and deterministic payload string serialization.

@@ -3,7 +3,7 @@ import { textSerializer } from '../../../src/payloads/text';
 
 describe('Plain Text Payload Serializer', () => {
   it('preserves raw text content including ASCII, Unicode, and Emoji', () => {
-    const text = 'Hello PureQR! 🔒 こんにちは 🚀';
+    const text = 'Hello QRVerity! 🔒 こんにちは 🚀';
     const res = textSerializer.validate({ text });
     expect(res.valid).toBe(true);
     expect(textSerializer.serialize(res.normalized!)).toBe(text);
