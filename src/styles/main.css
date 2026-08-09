@@ -330,6 +330,16 @@ textarea.form-control {
   font-size: 0.75rem;
 }
 
+.form-hint {
+  color: #596673;
+  font-size: 0.7rem;
+  margin-top: 4px;
+}
+
+.form-hint--success {
+  color: var(--success, #2d8a4e);
+}
+
 .form-banner {
   padding: 9px 12px;
   border-radius: var(--radius-sm);

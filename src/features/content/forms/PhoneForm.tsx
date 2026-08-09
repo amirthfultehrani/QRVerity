@@ -8,7 +8,10 @@ interface PhoneFormProps {
 }
 
 export function PhoneForm({ input, issues }: PhoneFormProps) {
-  const numberIssue = issues.find((i) => i.field === 'number' || i.code === 'INVALID_INPUT');
+  const rawIssue = issues.find((i) => i.field === 'number' || i.code === 'INVALID_INPUT');
+  const isEmpty = !(input?.number || '').trim();
+  const numberIssue =
+    rawIssue && (rawIssue.code !== 'EMPTY_PHONE' || !isEmpty) ? rawIssue : undefined;
 
   return (
     <div class="form-group">
@@ -26,13 +29,18 @@ export function PhoneForm({ input, issues }: PhoneFormProps) {
           })
         }
         placeholder="+1 (555) 019-2834"
-        aria-describedby={numberIssue ? 'phone-error' : undefined}
+        aria-describedby={numberIssue ? 'phone-error' : 'phone-hint'}
         aria-invalid={Boolean(numberIssue)}
         required
       />
       {numberIssue && (
         <p id="phone-error" class="form-error" role="alert">
           {numberIssue.message}
+        </p>
+      )}
+      {!numberIssue && (
+        <p id="phone-hint" class="form-hint">
+          Include country code for international numbers (e.g. +1 for US)
         </p>
       )}
     </div>

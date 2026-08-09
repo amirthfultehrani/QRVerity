@@ -40,6 +40,7 @@ export function WifiForm({ input, issues }: WifiFormProps) {
             {ssidIssue.message}
           </p>
         )}
+        {!ssidIssue && <p class="form-hint">Exact name of the Wi-Fi network — case sensitive</p>}
       </div>
 
       <div class="form-group">

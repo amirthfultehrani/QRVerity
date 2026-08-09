@@ -38,6 +38,9 @@ export function EmailForm({ input, issues }: EmailFormProps) {
             {toIssue.message}
           </p>
         )}
+        {!toIssue && (
+          <p class="form-hint">Scanning the QR code will open an email to this address</p>
+        )}
       </div>
 
       <div class="form-group">

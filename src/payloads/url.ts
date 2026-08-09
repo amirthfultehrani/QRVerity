@@ -66,8 +66,18 @@ export class UrlPayloadSerializer implements PayloadSerializer<
       };
     }
 
+    // Smart auto-prefix: if input looks like a bare domain, prepend https://
+    let candidate = trimmed;
+    if (!/^[a-zA-Z][a-zA-Z0-9+\-.]*:\/\//.test(candidate) && !/^[a-zA-Z]+:/.test(candidate)) {
+      // Looks like it might be a bare domain (has a dot, no spaces before the first slash)
+      const prePath = candidate.split('/')[0] ?? '';
+      if (prePath.includes('.') && !/\s/.test(prePath)) {
+        candidate = `https://${candidate}`;
+      }
+    }
+
     try {
-      const parsed = new URL(trimmed);
+      const parsed = new URL(candidate);
       const protocol = parsed.protocol.toLowerCase();
 
       if (protocol !== 'http:' && protocol !== 'https:') {
