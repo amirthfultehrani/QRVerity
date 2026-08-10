@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="docs/images/QRVerity_Wordmark_Centered.svg" alt="QRVerity" width="320">
+  <img src="docs/images/QRVerity_Wordmark_Final.svg" alt="QRVerity" width="320">
 </h1>
 
 <p align="center">
