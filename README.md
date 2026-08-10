@@ -1,4 +1,6 @@
-# QRVerity
+<h1 align="center">
+  <img src="docs/images/QRVerity_Wordmark.svg" alt="QRVerity" width="320">
+</h1>
 
 <p align="center">
   <strong>Private, client-side QR generation with rendered-output verification.</strong>

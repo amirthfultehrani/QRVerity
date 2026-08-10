@@ -8,7 +8,10 @@ export function App() {
     <div class="site-container">
       <header class="site-header">
         <div class="header-brand">
-          <h1 class="site-title">QRVerity</h1>
+          <h1 class="site-title" aria-label="QRVerity">
+            <span>QR</span>
+            <span class="site-title__accent">Verity</span>
+          </h1>
           <p class="site-tagline">Private. Reliable. Open Source.</p>
         </div>
         <div class="header-privacy-badge">
