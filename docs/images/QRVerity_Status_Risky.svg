@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="48" viewBox="0 0 180 48" role="img" aria-labelledby="title desc">
+  <title id="title">RISKY</title>
+  <desc id="desc">Risky reliability status</desc>
+  <rect width="180" height="48" rx="10" fill="#cf222e"/>
+  <text x="90" y="31" fill="#ffffff" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="20" font-weight="700" text-anchor="middle" letter-spacing="1">RISKY</text>
+</svg>

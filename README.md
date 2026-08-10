@@ -54,6 +54,8 @@
 ## Why QRVerity?
 
 > Most QR generators stop after creating the QR.
+>
+> **QRVerity continues with five local checks:**
 
 <table>
   <tr>
@@ -65,7 +67,7 @@
   </tr>
 </table>
 
-The final rendered image is decoded and compared with the intended payload before download.
+Together, these checks verify the final rendered image before download.
 
 ## Features
 
@@ -96,9 +98,9 @@ The final rendered image is decoded and compared with the intended payload befor
 
 <table>
   <tr>
-    <th align="center" width="33.33%">GOOD</th>
-    <th align="center" width="33.33%">CAUTION</th>
-    <th align="center" width="33.33%">RISKY</th>
+    <th align="center" width="33.33%"><img src="docs/images/QRVerity_Status_Good.svg" alt="Good status" width="120"></th>
+    <th align="center" width="33.33%"><img src="docs/images/QRVerity_Status_Caution.svg" alt="Caution status" width="120"></th>
+    <th align="center" width="33.33%"><img src="docs/images/QRVerity_Status_Risky.svg" alt="Risky status" width="120"></th>
   </tr>
   <tr>
     <td align="center" valign="top">
