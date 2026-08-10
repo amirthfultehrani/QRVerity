@@ -2,6 +2,6 @@
   <title id="title">QRVerity</title>
   <desc id="desc">QRVerity wordmark with Verity in blue</desc>
   <rect width="360" height="80" rx="18" fill="#081221"/>
-  <text x="24" y="54" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="46" font-weight="750" letter-spacing="-2">QR</text>
-  <text x="94" y="54" fill="#1683ff" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="46" font-weight="750" letter-spacing="-2">Verity</text>
+  <text x="72" y="54" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="46" font-weight="750" letter-spacing="-2">QR</text>
+  <text x="142" y="54" fill="#1683ff" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="46" font-weight="750" letter-spacing="-2">Verity</text>
 </svg>
