@@ -112,6 +112,9 @@ test.describe('Phase 5 — Export & Clipboard E2E Suite', () => {
   }) => {
     await page.setViewportSize({ width: 390, height: 844 });
 
+    await page.getByLabel('Website URL').fill('https://example.com/mobile-export');
+    await expect(page.getByLabel('Generated QR Code Preview')).toBeVisible();
+
     const previewPanel = page.locator('.preview-panel');
     await expect(previewPanel.getByRole('button', { name: 'Download PNG' })).toBeVisible();
     await expect(previewPanel.getByRole('button', { name: 'Download PNG' })).toBeEnabled();
