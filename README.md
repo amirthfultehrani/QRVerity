@@ -90,36 +90,50 @@ This is still not a guarantee that the QR will scan in every situation. Real-wor
 <table>
   <tr>
     <th align="left" width="50%">Create QR content</th>
-    <th align="left" width="50%">Style, export, and verify</th>
+    <th align="left" width="50%">Appearance</th>
   </tr>
   <tr>
     <td valign="top">
       <ul>
-        <li>URL (opens a website)</li>
-        <li>Plain text (displays written text)</li>
-        <li>Wi-Fi (connects to a Wi-Fi network using encoded credentials)</li>
-        <li>Email (opens a pre-addressed email)</li>
-        <li>Phone (opens the phone dialer with a number)</li>
-        <li>SMS (opens a pre-addressed text message)</li>
-        <li>Contact / vCard (saves contact details)</li>
-        <li>Location / geo (opens geographic coordinates in a maps app)</li>
-        <li>Calendar event (creates a calendar event)</li>
+        <li><strong>URL</strong> - opens a website</li>
+        <li><strong>Plain text</strong> - displays written text</li>
+        <li><strong>Wi-Fi</strong> - connects to a Wi-Fi network using encoded credentials</li>
+        <li><strong>Email</strong> - opens a pre-addressed email</li>
+        <li><strong>Phone</strong> - opens the phone dialer with a number</li>
+        <li><strong>SMS</strong> - opens a pre-addressed text message</li>
+        <li><strong>Contact / vCard</strong> - saves contact details</li>
+        <li><strong>Location / geo</strong> - opens geographic coordinates in a maps app</li>
+        <li><strong>Calendar event</strong> - creates a calendar event</li>
       </ul>
     </td>
     <td valign="top">
       <ul>
-        <li>Foreground/background colors (customizes QR code and background colors)</li>
-        <li>Square / Rounded / Dots data module styles (changes QR data marks to square, rounded, or dot shapes)</li>
-        <li>Square / Rounded finder styles (changes the appearance of the three large corner markers)</li>
-        <li>Raster logo support (adds a PNG, JPEG, or WebP logo to the QR code)</li>
-        <li>Automatic H error correction with logos (uses the strongest available error-correction level when a logo is added)</li>
-        <li>PNG export (downloads a pixel-based image)</li>
-        <li>SVG export (downloads a scalable vector image)</li>
-        <li>Copy image / Copy SVG where browser support allows</li>
-        <li>Predicted Reliability (checks whether the rendered QR decodes correctly, matches the intended data, and has sufficient contrast)</li>
-        <li>Responsive layout (adapts to phones, tablets, and desktops)</li>
-        <li>Accessibility-oriented controls (keyboard navigation, labels, focus states, and screen-reader-friendly semantics)</li>
-        <li>Local browser processing (generates and checks QR content in the browser without sending the QR payload to a generation server)</li>
+        <li><strong>Foreground/background colors</strong> - customizes QR code and background colors</li>
+        <li><strong>Data module styles</strong> - Square, Rounded, or Dots</li>
+        <li><strong>Finder styles</strong> - Square or Rounded corner markers</li>
+        <li><strong>Raster logo support</strong> - adds a PNG, JPEG, or WebP logo to the QR code</li>
+        <li><strong>Automatic H correction</strong> - uses the strongest error-correction level when a logo is added</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <th align="left">Export</th>
+    <th align="left">Trust and experience</th>
+  </tr>
+  <tr>
+    <td valign="top">
+      <ul>
+        <li><strong>PNG export</strong> - downloads a pixel-based image</li>
+        <li><strong>SVG export</strong> - downloads a scalable vector image</li>
+        <li><strong>Copy image / Copy SVG</strong> - available where browser support allows</li>
+      </ul>
+    </td>
+    <td valign="top">
+      <ul>
+        <li><strong>Predicted Reliability</strong> - checks rendered decoding, payload match, and contrast</li>
+        <li><strong>Responsive layout</strong> - adapts to phones, tablets, and desktops</li>
+        <li><strong>Accessibility-oriented controls</strong> - keyboard navigation, labels, focus states, and screen-reader-friendly semantics</li>
+        <li><strong>Local browser processing</strong> - generates and checks QR content without sending the payload to a generation server</li>
       </ul>
     </td>
   </tr>
@@ -188,18 +202,14 @@ Available options include:
 
 <table>
   <tr>
-    <td width="25%" align="center"><strong>Colors</strong><br>Foreground and background colors</td>
-    <td width="25%" align="center"><strong>Modules</strong><br>Square, rounded, or dots</td>
-    <td width="25%" align="center"><strong>Finders</strong><br>Square or rounded corner markers</td>
-    <td width="25%" align="center"><strong>Logos</strong><br>Raster logos with automatic H correction</td>
+    <td width="50%" valign="top"><strong>Colors</strong><br>Foreground and background colors</td>
+    <td width="50%" valign="top"><strong>Shape controls</strong><br>Module styles and finder styles, including Square, Rounded, and Dots data modules</td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><strong>Raster logos</strong><br>PNG, JPEG, or WebP logos added to the QR code</td>
+    <td width="50%" valign="top"><strong>Error correction</strong><br><strong>M</strong> as the balanced default and automatic <strong>H</strong> when a logo is added</td>
   </tr>
 </table>
-
-- foreground and background colors
-- module styles
-- finder styles
-- raster logos
-- error correction
 
 ### What is error correction?
 
@@ -232,21 +242,27 @@ QRVerity supports:
 
 ## Supported QR types
 
-<p align="center">
-  <img src="docs/images/QRVerity_QRTypeDropdowns.png" alt="QRVerity QR type selector options" width="620">
-</p>
-
-| Type            | What it encodes                  |
-| --------------- | -------------------------------- |
-| URL             | Web links                        |
-| Plain text      | Unformatted text                 |
-| Wi-Fi           | Network credentials              |
-| Email           | Email address, subject, and body |
-| Phone           | Phone numbers                    |
-| SMS             | Phone number and message         |
-| Contact / vCard | Contact details                  |
-| Location / geo  | Geographic coordinates           |
-| Calendar event  | iCalendar events                 |
+<table>
+  <tr>
+    <td width="64%" valign="top">
+      <img src="docs/images/QRVerity_QRTypeDropdowns.png" alt="QRVerity QR type selector options" width="100%">
+    </td>
+    <td width="36%" valign="top">
+      <table>
+        <tr><th align="left">Type</th><th align="left">What it encodes</th></tr>
+        <tr><td>URL</td><td>Web links</td></tr>
+        <tr><td>Plain text</td><td>Unformatted text</td></tr>
+        <tr><td>Wi-Fi</td><td>Network credentials</td></tr>
+        <tr><td>Email</td><td>Email address, subject, and body</td></tr>
+        <tr><td>Phone</td><td>Phone numbers</td></tr>
+        <tr><td>SMS</td><td>Phone number and message</td></tr>
+        <tr><td>Contact / vCard</td><td>Contact details</td></tr>
+        <tr><td>Location / geo</td><td>Geographic coordinates</td></tr>
+        <tr><td>Calendar event</td><td>iCalendar events</td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
 
 ## Development
 
