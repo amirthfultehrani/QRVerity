@@ -36,8 +36,6 @@
 
 ## Preview
 
-See the full desktop experience alongside the responsive mobile layout.
-
 <table>
   <tr>
     <th align="center" width="72%">Desktop</th>
@@ -59,11 +57,11 @@ See the full desktop experience alongside the responsive mobile layout.
 
 <table>
   <tr>
-    <td align="center" width="20%"><strong>1</strong><br><small>Generates the QR</small></td>
-    <td align="center" width="20%"><strong>2</strong><br><small>Renders the final styled output</small></td>
-    <td align="center" width="20%"><strong>3</strong><br><small>Rasterizes it</small></td>
-    <td align="center" width="20%"><strong>4</strong><br><small>Attempts to decode the rendered result</small></td>
-    <td align="center" width="20%"><strong>5</strong><br><small>Compares decoded content with the original payload</small></td>
+    <td align="center" width="20%"><strong>1</strong><br><small>Generate</small></td>
+    <td align="center" width="20%"><strong>2</strong><br><small>Render</small></td>
+    <td align="center" width="20%"><strong>3</strong><br><small>Rasterize</small></td>
+    <td align="center" width="20%"><strong>4</strong><br><small>Decode</small></td>
+    <td align="center" width="20%"><strong>5</strong><br><small>Compare</small></td>
   </tr>
 </table>
 
@@ -73,52 +71,23 @@ The final rendered image is decoded and compared with the intended payload befor
 
 <table>
   <tr>
-    <th align="left" width="50%">Create QR content</th>
-    <th align="left" width="50%">Appearance</th>
-  </tr>
-  <tr>
-    <td valign="top">
-      <ul>
-        <li><strong>URL</strong> - opens a website</li>
-        <li><strong>Plain text</strong> - displays written text</li>
-        <li><strong>Wi-Fi</strong> - connects to a Wi-Fi network using encoded credentials</li>
-        <li><strong>Email</strong> - opens a pre-addressed email</li>
-        <li><strong>Phone</strong> - opens the phone dialer with a number</li>
-        <li><strong>SMS</strong> - opens a pre-addressed text message</li>
-        <li><strong>Contact / vCard</strong> - saves contact details</li>
-        <li><strong>Location / geo</strong> - opens geographic coordinates in a maps app</li>
-        <li><strong>Calendar event</strong> - creates a calendar event</li>
-      </ul>
+    <td width="50%" valign="top">
+      <strong>Create QR content</strong><br>
+      <small>URL · Plain text · Wi-Fi · Email · Phone · SMS · Contact / vCard · Location / geo · Calendar event</small>
     </td>
-    <td valign="top">
-      <ul>
-        <li><strong>Foreground/background colors</strong> - customizes QR code and background colors</li>
-        <li><strong>Data module styles</strong> - Square, Rounded, or Dots</li>
-        <li><strong>Finder styles</strong> - Square or Rounded corner markers</li>
-        <li><strong>Raster logo support</strong> - adds a PNG, JPEG, or WebP logo to the QR code</li>
-        <li><strong>Automatic H correction</strong> - uses the strongest error-correction level when a logo is added</li>
-      </ul>
+    <td width="50%" valign="top">
+      <strong>Appearance</strong><br>
+      <small>Foreground/background colors · Square, Rounded, or Dots data modules · Square or Rounded finder styles · PNG, JPEG, or WebP logos · Automatic H correction with logos</small>
     </td>
   </tr>
   <tr>
-    <th align="left">Export</th>
-    <th align="left">Trust and experience</th>
-  </tr>
-  <tr>
-    <td valign="top">
-      <ul>
-        <li><strong>PNG export</strong> - downloads a pixel-based image</li>
-        <li><strong>SVG export</strong> - downloads a scalable vector image</li>
-        <li><strong>Copy image / Copy SVG</strong> - available where browser support allows</li>
-      </ul>
+    <td width="50%" valign="top">
+      <strong>Export</strong><br>
+      <small>PNG · SVG · Copy image · Copy SVG</small>
     </td>
-    <td valign="top">
-      <ul>
-        <li><strong>Predicted Reliability</strong> - checks rendered decoding, payload match, and contrast</li>
-        <li><strong>Responsive layout</strong> - adapts to phones, tablets, and desktops</li>
-        <li><strong>Accessibility-oriented controls</strong> - keyboard navigation, labels, focus states, and screen-reader-friendly semantics</li>
-        <li><strong>Local browser processing</strong> - generates and checks QR content without sending the payload to a generation server</li>
-      </ul>
+    <td width="50%" valign="top">
+      <strong>Trust and experience</strong><br>
+      <small>Predicted Reliability · Responsive layout · Accessibility-oriented controls · Local browser processing</small>
     </td>
   </tr>
 </table>
@@ -255,18 +224,19 @@ npm run build
 
 ## Architecture
 
-| Layer           | Technology or role                    |
-| --------------- | ------------------------------------- |
-| UI              | Vite + TypeScript + Preact            |
-| State           | Signals                               |
-| Encoding        | Vendored Nayuki encoder               |
-| Rendering       | Canonical SVG renderer                |
-| Verification    | jsQR for rendered-output verification |
-| Background work | Web Worker for decoding/evaluation    |
+<table align="center" width="76%">
+  <tr><th align="left" width="28%">Layer</th><th align="left">Technology or role</th></tr>
+  <tr><td>UI</td><td>Vite + TypeScript + Preact</td></tr>
+  <tr><td>State</td><td>Signals</td></tr>
+  <tr><td>Encoding</td><td>Vendored Nayuki encoder</td></tr>
+  <tr><td>Rendering</td><td>Canonical SVG renderer</td></tr>
+  <tr><td>Verification</td><td>jsQR for rendered-output verification</td></tr>
+  <tr><td>Background work</td><td>Web Worker for decoding/evaluation</td></tr>
+</table>
 
 ## Security and design constraints
 
-<table>
+<table align="center" width="76%">
   <tr>
     <td width="50%" valign="top">
       <ul>
@@ -288,11 +258,12 @@ For details, refer to [SECURITY.md](./SECURITY.md).
 
 ## Browser support and accessibility
 
-| Supported browser | Accessibility and layout            |
-| ----------------- | ----------------------------------- |
-| Chromium          | Keyboard support                    |
-| Firefox           | WCAG-oriented accessibility testing |
-| WebKit            | Mobile responsive support           |
+<table align="center" width="76%">
+  <tr><th align="left" width="38%">Supported browser</th><th align="left">Accessibility and layout</th></tr>
+  <tr><td>Chromium</td><td>Keyboard support</td></tr>
+  <tr><td>Firefox</td><td>WCAG-oriented accessibility testing</td></tr>
+  <tr><td>WebKit</td><td>Mobile responsive support</td></tr>
+</table>
 
 ## Limitations
 
