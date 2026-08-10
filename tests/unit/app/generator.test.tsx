@@ -15,7 +15,7 @@ describe('Phase 4 — Generator State & UI Pipeline Integration', () => {
     setPayloadType('url');
     setEcc('M');
     payloadInputs.value = {
-      url: { url: 'https://example.com' },
+      url: { url: '' },
       text: { text: '' },
       wifi: { ssid: '', security: 'WPA', password: '', hidden: false },
       email: { to: '', subject: '', body: '' },
@@ -41,12 +41,11 @@ describe('Phase 4 — Generator State & UI Pipeline Integration', () => {
     };
   });
 
-  it('generates valid QR SVG and metadata for default URL state', () => {
+  it('starts with an empty URL input and no generated QR code', () => {
     const res = generationResult.value;
-    expect(res.renderResult).not.toBeNull();
-    expect(res.metadata).not.toBeNull();
-    expect(res.canonicalString).toBe('https://example.com/');
-    expect(res.renderResult?.svg).toContain('viewBox=');
+    expect(res.renderResult).toBeNull();
+    expect(res.metadata).toBeNull();
+    expect(res.canonicalString).toBe('');
   });
 
   it('handles seamless payload switching without state leakage', () => {
@@ -96,6 +95,6 @@ describe('Phase 4 — Generator State & UI Pipeline Integration', () => {
     expect(screen.getByRole('heading', { level: 1 }).textContent).toBe('QRVerity');
     expect(screen.getByText('Generated locally in your browser')).not.toBeNull();
     expect(screen.getByLabelText('Website URL')).not.toBeNull();
-    expect(screen.getByLabelText('Generated QR Code Preview')).not.toBeNull();
+    expect(screen.getByText('Your QR will appear here')).not.toBeNull();
   });
 });

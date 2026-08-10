@@ -21,7 +21,7 @@ export interface GenerationResult {
 export type PayloadInputsMap = Record<PayloadType, any>;
 
 const defaultPayloadInputs: PayloadInputsMap = {
-  url: { url: 'https://example.com' },
+  url: { url: '' },
   text: { text: '' },
   wifi: { ssid: '', security: 'WPA', password: '', hidden: false },
   email: { to: '', subject: '', body: '' },

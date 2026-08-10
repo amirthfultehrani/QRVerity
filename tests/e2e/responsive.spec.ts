@@ -74,6 +74,7 @@ test.describe('Responsive density and overflow regression suite', () => {
     }) => {
       await page.setViewportSize(viewport);
       await page.goto('/');
+      await page.getByLabel('Website URL').fill('https://example.com/desktop-responsive');
       await expect(page.locator('.reliability-badge')).toHaveText('Good', { timeout: 15000 });
 
       const positions = await page.evaluate(() => {

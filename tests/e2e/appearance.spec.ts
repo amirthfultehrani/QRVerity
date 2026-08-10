@@ -6,6 +6,7 @@ test.describe('Phase 7 — Appearance & Logo Support E2E Suite', () => {
     await page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
     await page.goto('/');
     await page.locator('.appearance-summary').click();
+    await page.getByLabel('Website URL').fill('https://example.com/appearance-test');
   });
 
   test('TEST 1 — Appearance Controls: Changes module and finder styles cleanly', async ({
@@ -166,7 +167,7 @@ test.describe('Phase 7 — Appearance & Logo Support E2E Suite', () => {
 
     const reliabilityDetails = page.locator('.reliability-explanation');
     await expect(reliabilityDetails).toContainText('Contrast: 21.0:1');
-    await expect(reliabilityDetails).toContainText('Test render: 528 × 528 px');
+    await expect(reliabilityDetails).toContainText(/Test render: \d+ × \d+ px/);
     await expect(reliabilityDetails).toContainText('Pixels/module');
     await expect(reliabilityDetails).toContainText('Error correction: M');
     await expect(reliabilityDetails).toContainText('Module style: Square');

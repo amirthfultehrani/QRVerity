@@ -22,14 +22,15 @@ test.describe('Phase 4 — Generator UI E2E & Accessibility Suite', () => {
     await expect(metadata).toContainText('modules');
   });
 
-  test('TEST 1A — Initial URL state: Shows a consistent, usable default without an empty error', async ({
+  test('TEST 1A — Initial URL state: Starts empty and uses a placeholder without an empty error', async ({
     page,
   }) => {
     const urlInput = page.getByLabel('Website URL');
 
-    await expect(urlInput).toHaveValue('https://example.com');
+    await expect(urlInput).toHaveValue('');
+    await expect(urlInput).toHaveAttribute('placeholder', 'https://example.com');
     await expect(page.getByRole('alert')).not.toBeVisible();
-    await expect(page.getByLabel('Generated QR Code Preview')).toBeVisible();
+    await expect(page.getByText('Your QR will appear here')).toBeVisible();
   });
 
   test('TEST 2 — Invalid URL: Shows validation error and replaces QR preview with placeholder', async ({
@@ -86,7 +87,7 @@ test.describe('Phase 4 — Generator UI E2E & Accessibility Suite', () => {
     await page.setViewportSize({ width: 390, height: 844 });
 
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
-    await expect(page.getByLabel('Generated QR Code Preview')).toBeVisible();
+    await expect(page.getByText('Your QR will appear here')).toBeVisible();
 
     const isScrollableX = await page.evaluate(() => {
       return document.documentElement.scrollWidth > document.documentElement.clientWidth;

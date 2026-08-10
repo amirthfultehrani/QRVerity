@@ -5,6 +5,7 @@ test.describe('Phase 6 — Rendered-Output Verification E2E Suite', () => {
   test.beforeEach(async ({ page }) => {
     await page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
     await page.goto('/');
+    await page.getByLabel('Website URL').fill('https://example.com/verification-test');
   });
 
   test('TEST 1 — URL Verification: Optical scan decodes default URL and displays GOOD badge', async ({
