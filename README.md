@@ -1,8 +1,7 @@
 # QRVerity
 
 <p align="center">
-  <strong>Private, client-side QR generation with rendered-output verification.</strong><br>
-  Generate it. Render it. Verify it. Download it.
+  <strong>Private, client-side QR generation with rendered-output verification.</strong>
 </p>
 
 <p align="center">
@@ -54,22 +53,9 @@ See the full desktop experience alongside the responsive mobile layout.
   </tr>
 </table>
 
-## At a glance
-
-<table>
-  <tr>
-    <td width="25%" valign="top"><strong>Local-first</strong><br>QR content is generated and checked in your browser.</td>
-    <td width="25%" valign="top"><strong>Rendered verification</strong><br>Tests the final styled image, not just the QR data.</td>
-    <td width="25%" valign="top"><strong>Customizable</strong><br>Colors, shapes, finder styles, and logos.</td>
-    <td width="25%" valign="top"><strong>Accessible</strong><br>Responsive controls with keyboard and screen-reader support.</td>
-  </tr>
-</table>
-
 ## Why QRVerity?
 
 > Most QR generators stop after creating the QR.
-
-QRVerity continues through the part that matters: checking whether the final rendered output still works.
 
 <table>
   <tr>
@@ -81,9 +67,7 @@ QRVerity continues through the part that matters: checking whether the final ren
   </tr>
 </table>
 
-The above process powers **Predicted Reliability**. It verifies that the final rendered image can be decoded and that it contains the data you intended before you download it.
-
-This is still not a guarantee that the QR will scan in every situation. Real-world reliability can change depending on the camera, printer, display, lighting, distance, focus, compression, glare, shadows, and scanner app being used.
+The final rendered image is decoded and compared with the intended payload before download.
 
 ## Features
 
@@ -141,8 +125,6 @@ This is still not a guarantee that the QR will scan in every situation. Real-wor
 
 ## Predicted Reliability
 
-QRVerity provides feedback on the final rendered QR code. The three states are shown together below so they are easy to compare.
-
 <table>
   <tr>
     <th align="center" width="33.33%">GOOD</th>
@@ -152,34 +134,24 @@ QRVerity provides feedback on the final rendered QR code. The three states are s
   <tr>
     <td align="center" valign="top">
       <img src="docs/images/QRVerity_Reliability_Good.png" alt="QRVerity GOOD Predicted Reliability result" width="100%"><br>
-      <small>The rendered QR decoded successfully, the decoded content exactly matched the original payload, and no contrast warning was triggered.</small>
+      <small>Decoded successfully, matched the payload, and passed contrast.</small>
     </td>
     <td align="center" valign="top">
       <img src="docs/images/QRVerity_Reliability_Caution.png" alt="QRVerity CAUTION Predicted Reliability result" width="100%"><br>
-      <small>The rendered QR decoded and matched the original payload, but the foreground/background contrast falls into QRVerity's caution range.</small>
+      <small>Decoded and matched the payload, but contrast is in the caution range.</small>
     </td>
     <td align="center" valign="top">
       <img src="docs/images/QRVerity_Reliability_Risky.png" alt="QRVerity RISKY Predicted Reliability result" width="100%"><br>
-      <small>QRVerity could not decode the rendered QR, the decoded content did not exactly match the original payload, or the contrast fell below QRVerity's minimum threshold.</small>
+      <small>Decode, payload match, or contrast check failed.</small>
     </td>
   </tr>
 </table>
 
-### What the check measures
+Colors, module styles, finder styles, and logos are evaluated as part of the final rendered image.
 
-| Check               | Question                                               |
-| ------------------- | ------------------------------------------------------ |
-| Rendered decode     | Can the decoder read the final rendered QR?            |
-| Exact payload match | Does the decoded data exactly match the intended data? |
-| Contrast heuristic  | Is there enough foreground/background contrast?        |
-
-Appearance settings such as colors, module style, finder style, and logos are part of the final rendered image that the decoder sees, but they are not necessarily scored independently.
-
-Predicted Reliability is a browser-side test of the rendered result, not a guarantee of how every physical camera or scanner will behave.
+Predicted Reliability is a browser-side rendered-output check, not a guarantee for every physical camera or scanner.
 
 ## Privacy
-
-QRVerity respects your privacy by design:
 
 <table>
   <tr>
@@ -192,22 +164,22 @@ QRVerity respects your privacy by design:
 
 ## Customization
 
-QRVerity allows you to change the appearance of a QR code while protecting its important structural regions.
+QRVerity protects important structural regions while letting you control the rendered appearance.
 
 <p align="center">
   <img src="docs/images/QRVerity_AppearanceOptions.png" alt="QRVerity appearance controls on desktop" width="72%">
 </p>
 
-Available options include:
-
 <table>
   <tr>
-    <td width="50%" valign="top"><strong>Colors</strong><br>Foreground and background colors</td>
-    <td width="50%" valign="top"><strong>Shape controls</strong><br>Module styles and finder styles, including Square, Rounded, and Dots data modules</td>
+    <th align="left" width="33.33%">Colors</th>
+    <th align="left" width="33.33%">Shape controls</th>
+    <th align="left" width="33.33%">Raster logos</th>
   </tr>
   <tr>
-    <td width="50%" valign="top"><strong>Raster logos</strong><br>PNG, JPEG, or WebP logos added to the QR code</td>
-    <td width="50%" valign="top"><strong>Error correction</strong><br><strong>M</strong> as the balanced default and automatic <strong>H</strong> when a logo is added</td>
+    <td valign="top">Foreground and background colors</td>
+    <td valign="top">Square, Rounded, or Dots data modules; Square or Rounded finder styles</td>
+    <td valign="top">PNG, JPEG, or WebP logos</td>
   </tr>
 </table>
 
@@ -277,10 +249,7 @@ npm run dev
 
 ```bash
 npm run format:check
-npm run lint
-npm run typecheck
-npm run test:unit
-npm run test:e2e
+npm run check
 npm run build
 ```
 
@@ -335,6 +304,4 @@ For details, refer to [SECURITY.md](./SECURITY.md).
 
 ## License
 
-Released under the MIT License. See [LICENSE](./LICENSE).
-
-See [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md) for open source software components.
+Released under the MIT License. See [LICENSE](./LICENSE) and [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md).
