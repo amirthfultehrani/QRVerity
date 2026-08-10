@@ -1,0 +1,51 @@
+{
+  "name": "qrverity",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Private, client-side QR generation with rendered-output verification",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amirthfultehrani/QRVerity.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amirthfultehrani/QRVerity/issues"
+  },
+  "homepage": "https://amirthfultehrani.github.io/QRVerity/",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run && playwright test",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run lint && npm run typecheck && npm run test:unit && npm run test:e2e"
+  },
+  "dependencies": {
+    "@preact/signals": "^2.11.0",
+    "jsqr": "^1.4.0",
+    "preact": "^10.26.4"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.1",
+    "@playwright/test": "^1.50.1",
+    "@preact/preset-vite": "^2.10.1",
+    "@testing-library/preact": "^3.2.4",
+    "@types/node": "^22.13.4",
+    "@typescript-eslint/eslint-plugin": "^8.24.1",
+    "@typescript-eslint/parser": "^8.24.1",
+    "eslint": "^9.20.1",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-import": "^2.31.0",
+    "happy-dom": "^20.11.2",
+    "prettier": "^3.5.1",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.1",
+    "vitest": "^3.0.6"
+  }
+}
