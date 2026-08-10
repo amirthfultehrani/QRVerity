@@ -1,90 +1,163 @@
 # QRVerity
 
-Private, client-side QR generation with rendered-output verification.
+<p align="center">
+  <strong>Private, client-side QR generation with rendered-output verification.</strong><br>
+  Generate it. Render it. Verify it. Download it.
+</p>
 
-[Live App](https://amirthfultehrani.github.io/QRVerity/) | [Repository](https://github.com/amirthfultehrani/QRVerity) | [License](./LICENSE)
+<p align="center">
+  <a href="https://amirthfultehrani.github.io/QRVerity/">Open the live app</a>
+  &nbsp;&bull;&nbsp;
+  <a href="https://github.com/amirthfultehrani/QRVerity">View the repository</a>
+  &nbsp;&bull;&nbsp;
+  <a href="./LICENSE">MIT License</a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/amirthfultehrani/QRVerity/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/amirthfultehrani/QRVerity/ci.yml?label=CI" alt="CI status"></a>
+  <a href="https://amirthfultehrani.github.io/QRVerity/"><img src="https://img.shields.io/badge/GitHub%20Pages-live-41a6e8" alt="Live on GitHub Pages"></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/github/license/amirthfultehrani/QRVerity" alt="MIT License"></a>
+</p>
+
+## Contents
+
+- [Preview](#preview)
+- [Why QRVerity?](#why-qrverity)
+- [Features](#features)
+- [Predicted Reliability](#predicted-reliability)
+- [Privacy](#privacy)
+- [Customization](#customization)
+- [Supported QR types](#supported-qr-types)
+- [Development](#development)
+- [Architecture](#architecture)
+- [Security and design constraints](#security-and-design-constraints)
+- [Browser support and accessibility](#browser-support-and-accessibility)
+- [Limitations](#limitations)
+- [License](#license)
 
 ## Preview
 
-<p align="center">
-  <img
-    src="docs/images/QRVerity_Desktop_Appearance.png"
-    alt="QRVerity desktop interface"
-    width="900"
-  >
-</p>
+See the full desktop experience alongside the responsive mobile layout.
+
+<table>
+  <tr>
+    <th align="center" width="72%">Desktop</th>
+    <th align="center" width="28%">Mobile</th>
+  </tr>
+  <tr>
+    <td valign="top">
+      <img src="docs/images/QRVerity_Desktop_Appearance.png" alt="QRVerity desktop interface" width="100%">
+    </td>
+    <td valign="top">
+      <img src="docs/images/QRVerity_Mobile_Appearance.jpg" alt="QRVerity mobile interface" width="100%">
+    </td>
+  </tr>
+</table>
+
+## At a glance
+
+<table>
+  <tr>
+    <td width="25%" valign="top"><strong>Local-first</strong><br>QR content is generated and checked in your browser.</td>
+    <td width="25%" valign="top"><strong>Rendered verification</strong><br>Tests the final styled image, not just the QR data.</td>
+    <td width="25%" valign="top"><strong>Customizable</strong><br>Colors, shapes, finder styles, and logos.</td>
+    <td width="25%" valign="top"><strong>Accessible</strong><br>Responsive controls with keyboard and screen-reader support.</td>
+  </tr>
+</table>
 
 ## Why QRVerity?
 
-Most QR generators stop after creating the QR.
+> Most QR generators stop after creating the QR.
 
-QRVerity:
+QRVerity continues through the part that matters: checking whether the final rendered output still works.
 
-1. generates the QR
-2. renders the final styled output
-3. rasterizes it
-4. attempts to decode the rendered result
-5. compares the decoded content exactly with the original encoded payload
+<table>
+  <tr>
+    <td align="center" width="20%"><strong>1</strong><br><small>Generates the QR</small></td>
+    <td align="center" width="20%"><strong>2</strong><br><small>Renders the final styled output</small></td>
+    <td align="center" width="20%"><strong>3</strong><br><small>Rasterizes it</small></td>
+    <td align="center" width="20%"><strong>4</strong><br><small>Attempts to decode the rendered result</small></td>
+    <td align="center" width="20%"><strong>5</strong><br><small>Compares decoded content with the original payload</small></td>
+  </tr>
+</table>
 
-The above process powers Predicted Reliability. It verifies that the final rendered image can be decoded and that it contains the data you intended before you download it.
+The above process powers **Predicted Reliability**. It verifies that the final rendered image can be decoded and that it contains the data you intended before you download it.
 
 This is still not a guarantee that the QR will scan in every situation. Real-world reliability can change depending on the camera, printer, display, lighting, distance, focus, compression, glare, shadows, and scanner app being used.
 
 ## Features
 
-- URL (opens a website)
-- Plain text (displays written text)
-- Wi-Fi (connects to a Wi-Fi network using encoded credentials)
-- Email (opens a pre-addressed email)
-- Phone (opens the phone dialer with a number)
-- SMS (opens a pre-addressed text message)
-- Contact / vCard (saves contact details)
-- Location / geo (opens geographic coordinates in a maps app)
-- Calendar event (creates a calendar event)
-- Foreground/background colors (customizes QR code and background colors)
-- Square / Rounded / Dots data module styles (changes QR data marks to square, rounded, or dot shapes)
-- Square / Rounded finder styles (changes the appearance of the three large corner markers)
-- Raster logo support (adds a PNG, JPEG, or WebP logo to the QR code)
-- Automatic H error correction with logos (uses the strongest available error-correction level when a logo is added)
-- PNG export (downloads a pixel-based image)
-- SVG export (downloads a scalable vector image)
-- Copy image / Copy SVG where browser support allows
-- Predicted Reliability (checks whether the rendered QR decodes correctly, matches the intended data, and has sufficient contrast)
-- Responsive layout (adapts to phones, tablets, and desktops)
-- Accessibility-oriented controls (keyboard navigation, labels, focus states, and screen-reader-friendly semantics)
-- Local browser processing (generates and checks QR content in the browser without sending the QR payload to a generation server)
+<table>
+  <tr>
+    <th align="left" width="50%">Create QR content</th>
+    <th align="left" width="50%">Style, export, and verify</th>
+  </tr>
+  <tr>
+    <td valign="top">
+      <ul>
+        <li>URL (opens a website)</li>
+        <li>Plain text (displays written text)</li>
+        <li>Wi-Fi (connects to a Wi-Fi network using encoded credentials)</li>
+        <li>Email (opens a pre-addressed email)</li>
+        <li>Phone (opens the phone dialer with a number)</li>
+        <li>SMS (opens a pre-addressed text message)</li>
+        <li>Contact / vCard (saves contact details)</li>
+        <li>Location / geo (opens geographic coordinates in a maps app)</li>
+        <li>Calendar event (creates a calendar event)</li>
+      </ul>
+    </td>
+    <td valign="top">
+      <ul>
+        <li>Foreground/background colors (customizes QR code and background colors)</li>
+        <li>Square / Rounded / Dots data module styles (changes QR data marks to square, rounded, or dot shapes)</li>
+        <li>Square / Rounded finder styles (changes the appearance of the three large corner markers)</li>
+        <li>Raster logo support (adds a PNG, JPEG, or WebP logo to the QR code)</li>
+        <li>Automatic H error correction with logos (uses the strongest available error-correction level when a logo is added)</li>
+        <li>PNG export (downloads a pixel-based image)</li>
+        <li>SVG export (downloads a scalable vector image)</li>
+        <li>Copy image / Copy SVG where browser support allows</li>
+        <li>Predicted Reliability (checks whether the rendered QR decodes correctly, matches the intended data, and has sufficient contrast)</li>
+        <li>Responsive layout (adapts to phones, tablets, and desktops)</li>
+        <li>Accessibility-oriented controls (keyboard navigation, labels, focus states, and screen-reader-friendly semantics)</li>
+        <li>Local browser processing (generates and checks QR content in the browser without sending the QR payload to a generation server)</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 ## Predicted Reliability
 
-QRVerity provides feedback on the final rendered QR code:
+QRVerity provides feedback on the final rendered QR code. The three states are shown together below so they are easy to compare.
 
-- **GOOD** — the rendered QR decoded successfully, the decoded content exactly matched the original payload, and no contrast warning was triggered.
-- **CAUTION** — the rendered QR decoded and matched the original payload, but the foreground/background contrast falls into QRVerity's caution range.
-- **RISKY** — QRVerity could not decode the rendered QR, the decoded content did not exactly match the original payload, or the contrast fell below QRVerity's minimum threshold.
+<table>
+  <tr>
+    <th align="center" width="33.33%">GOOD</th>
+    <th align="center" width="33.33%">CAUTION</th>
+    <th align="center" width="33.33%">RISKY</th>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <img src="docs/images/QRVerity_Reliability_Good.png" alt="QRVerity GOOD Predicted Reliability result" width="100%"><br>
+      <small>The rendered QR decoded successfully, the decoded content exactly matched the original payload, and no contrast warning was triggered.</small>
+    </td>
+    <td align="center" valign="top">
+      <img src="docs/images/QRVerity_Reliability_Caution.png" alt="QRVerity CAUTION Predicted Reliability result" width="100%"><br>
+      <small>The rendered QR decoded and matched the original payload, but the foreground/background contrast falls into QRVerity's caution range.</small>
+    </td>
+    <td align="center" valign="top">
+      <img src="docs/images/QRVerity_Reliability_Risky.png" alt="QRVerity RISKY Predicted Reliability result" width="100%"><br>
+      <small>QRVerity could not decode the rendered QR, the decoded content did not exactly match the original payload, or the contrast fell below QRVerity's minimum threshold.</small>
+    </td>
+  </tr>
+</table>
 
-<p align="center">
-  <img
-    src="docs/images/QRVerity_Reliability_Good.png"
-    alt="QRVerity GOOD Predicted Reliability result"
-    width="280"
-  >
-  <img
-    src="docs/images/QRVerity_Reliability_Caution.png"
-    alt="QRVerity CAUTION Predicted Reliability result"
-    width="280"
-  >
-  <img
-    src="docs/images/QRVerity_Reliability_Risky.png"
-    alt="QRVerity RISKY Predicted Reliability result"
-    width="280"
-  >
-</p>
+### What the check measures
 
-The implementation checks:
-
-- rendered decode success/failure — can the decoder read the final rendered QR?
-- exact payload match — does the decoded data exactly match the intended data?
-- contrast heuristic — is there enough foreground/background contrast?
+| Check               | Question                                               |
+| ------------------- | ------------------------------------------------------ |
+| Rendered decode     | Can the decoder read the final rendered QR?            |
+| Exact payload match | Does the decoded data exactly match the intended data? |
+| Contrast heuristic  | Is there enough foreground/background contrast?        |
 
 Appearance settings such as colors, module style, finder style, and logos are part of the final rendered image that the decoder sees, but they are not necessarily scored independently.
 
@@ -94,29 +167,33 @@ Predicted Reliability is a browser-side test of the rendered result, not a guara
 
 QRVerity respects your privacy by design:
 
-- QR content is processed locally in the browser
-- no account required
-- no backend required for QR generation
-- no analytics
+<table>
+  <tr>
+    <td align="center" width="25%"><strong>Local processing</strong><br>QR content is processed locally in the browser.</td>
+    <td align="center" width="25%"><strong>No account</strong><br>No sign-up or account is required.</td>
+    <td align="center" width="25%"><strong>No backend</strong><br>No backend is required for QR generation.</td>
+    <td align="center" width="25%"><strong>No analytics</strong><br>Your QR payload is not sent to an analytics service.</td>
+  </tr>
+</table>
 
 ## Customization
 
 QRVerity allows you to change the appearance of a QR code while protecting its important structural regions.
 
 <p align="center">
-  <img
-    src="docs/images/QRVerity_AppearanceOptions.png"
-    alt="QRVerity appearance controls on desktop"
-    width="62%"
-  >
-  <img
-    src="docs/images/QRVerity_Mobile_Appearance.jpg"
-    alt="QRVerity appearance controls on mobile"
-    width="28%"
-  >
+  <img src="docs/images/QRVerity_AppearanceOptions.png" alt="QRVerity appearance controls on desktop" width="72%">
 </p>
 
 Available options include:
+
+<table>
+  <tr>
+    <td width="25%" align="center"><strong>Colors</strong><br>Foreground and background colors</td>
+    <td width="25%" align="center"><strong>Modules</strong><br>Square, rounded, or dots</td>
+    <td width="25%" align="center"><strong>Finders</strong><br>Square or rounded corner markers</td>
+    <td width="25%" align="center"><strong>Logos</strong><br>Raster logos with automatic H correction</td>
+  </tr>
+</table>
 
 - foreground and background colors
 - module styles
@@ -138,9 +215,9 @@ A module is one of the small marks that makes up a QR code.
 
 QRVerity lets data modules use:
 
-- **Square** — classic square modules
-- **Rounded** — square modules with softened corners
-- **Dots** — circular data modules
+- **Square** - classic square modules
+- **Rounded** - square modules with softened corners
+- **Dots** - circular data modules
 
 Structural QR patterns remain protected from decorative data-module styling.
 
@@ -150,10 +227,14 @@ The three large square markers in the corners of a QR code are finder patterns. 
 
 QRVerity supports:
 
-- **Square** — classic finder appearance
-- **Rounded** — softens the outer finder corners while preserving their structure
+- **Square** - classic finder appearance
+- **Rounded** - softens the outer finder corners while preserving their structure
 
 ## Supported QR types
+
+<p align="center">
+  <img src="docs/images/QRVerity_QRTypeDropdowns.png" alt="QRVerity QR type selector options" width="620">
+</p>
 
 | Type            | What it encodes                  |
 | --------------- | -------------------------------- |
@@ -169,12 +250,14 @@ QRVerity supports:
 
 ## Development
 
+### Getting started
+
 ```bash
 npm install
 npm run dev
 ```
 
-To run development checks:
+### Development checks
 
 ```bash
 npm run format:check
@@ -187,41 +270,55 @@ npm run build
 
 ## Architecture
 
-- Vite + TypeScript + Preact
-- Signals
-- vendored Nayuki encoder
-- canonical SVG renderer
-- jsQR for rendered-output verification
-- Web Worker for decoding/evaluation
+| Layer           | Technology or role                    |
+| --------------- | ------------------------------------- |
+| UI              | Vite + TypeScript + Preact            |
+| State           | Signals                               |
+| Encoding        | Vendored Nayuki encoder               |
+| Rendering       | Canonical SVG renderer                |
+| Verification    | jsQR for rendered-output verification |
+| Background work | Web Worker for decoding/evaluation    |
 
-## Security / design constraints
+## Security and design constraints
 
-- no remote QR-generation backend
-- sanitised raster logos
-- protected QR structural regions
-- client-side verification
-- CSP/security-conscious deployment
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <ul>
+        <li>No remote QR-generation backend</li>
+        <li>Sanitised raster logos</li>
+        <li>Protected QR structural regions</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <ul>
+        <li>Client-side verification</li>
+        <li>CSP/security-conscious deployment</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 For details, refer to [SECURITY.md](./SECURITY.md).
 
-## Browser support / accessibility
+## Browser support and accessibility
 
-- Chromium
-- Firefox
-- WebKit
-- keyboard support
-- WCAG-oriented accessibility testing
-- mobile responsive support
+| Supported browser | Accessibility and layout            |
+| ----------------- | ----------------------------------- |
+| Chromium          | Keyboard support                    |
+| Firefox           | WCAG-oriented accessibility testing |
+| WebKit            | Mobile responsive support           |
 
 ## Limitations
 
 - Predicted Reliability is not a guarantee
-- real-world scanning varies by device/environment
-- raster logos only
-- no dynamic QR / tracking / accounts
-- no PDF/WebP export in v1
+- Real-world scanning varies by device/environment
+- Raster logos only
+- No dynamic QR / tracking / accounts
+- No PDF/WebP export in v1
 
 ## License
 
 Released under the MIT License. See [LICENSE](./LICENSE).
+
 See [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md) for open source software components.
