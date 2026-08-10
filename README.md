@@ -54,10 +54,10 @@
 ## Why QRVerity?
 
 > Most QR generators stop after creating the QR.
->
-> **QRVerity continues with five local checks:**
 
-<table>
+<p align="center"><strong>QRVerity continues with five local checks:</strong></p>
+
+<table align="center" width="76%">
   <tr>
     <td align="center" width="20%"><strong>1</strong><br><small>Generate</small></td>
     <td align="center" width="20%"><strong>2</strong><br><small>Render</small></td>
@@ -67,7 +67,7 @@
   </tr>
 </table>
 
-Together, these checks verify the final rendered image before download.
+<p align="center">Together, these checks verify the final rendered image before download.</p>
 
 ## Features
 
