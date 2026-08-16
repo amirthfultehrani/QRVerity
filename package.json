@@ -37,7 +37,7 @@
     "@preact/preset-vite": "^2.10.1",
     "@testing-library/preact": "^3.2.4",
     "@types/node": "^22.13.4",
-    "@typescript-eslint/eslint-plugin": "^8.24.1",
+    "@typescript-eslint/eslint-plugin": "^8.67.0",
     "@typescript-eslint/parser": "^8.24.1",
     "eslint": "^9.20.1",
     "eslint-config-prettier": "^10.0.1",
